@@ -17,9 +17,11 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject capsulehand;
 	public GameObject spawnPoint1;
 	public GameObject spawnPoint2;
+    public GameObject seekerprefab;
+    public GameObject hiderprefab;
 
-	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
-	public Transform[] spawnPoints;
+    //Array to hold the spawn points in the scene and an array to see which spawn points have been taken
+    public Transform[] spawnPoints;
 	public bool[] spawnPointTaken;
 	// Use this for initialization
 	void Start()
@@ -97,11 +99,24 @@ public class NetworkManager : MonoBehaviour {
             spawnLocation = Vector3.zero;
         }
 
+        GameObject go = GameObject.Find("Seeker(Clone)");
+        if (go == null) {
+            GameObject.Instantiate(seekerprefab, spawnLocation, Quaternion.identity);
+        }
+        else {
+            GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
+        };
 
-		Debug.Log ("Creating new player and spawn position is " + spawnLocation);
+        //count the players, if there's 2 players begin the game
+        GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");
+        if(playercount.Length >= 2) {
+
+        }
+
+		
 
 		//playerprefab is a camera rig for HTC Vive
-		GameObject.Instantiate (playerprefab, spawnLocation, Quaternion.identity);
+		//GameObject.Instantiate (playerprefab, spawnLocation, Quaternion.identity);
 
 	}
 
