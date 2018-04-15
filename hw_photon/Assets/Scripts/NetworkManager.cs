@@ -110,7 +110,7 @@ public class NetworkManager : MonoBehaviour {
         //count the players, if there's 2 players begin the game
         GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");
         if(playercount.Length >= 2) {
-
+            // start the game
         }
 
 		
