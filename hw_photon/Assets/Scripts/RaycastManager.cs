@@ -5,6 +5,7 @@ using UnityEngine;
 public class RaycastManager : MonoBehaviour {
 
     public int raycastDistance;
+	public float end_game_raycast_distance;
     public LayerMask layers;
 
     // Use this for initialization
@@ -27,9 +28,11 @@ public class RaycastManager : MonoBehaviour {
             Debug.Log("weve got a hit!");
             Debug.Log(hit.collider.gameObject.name);
 
-            //if (tag == "Interactables") {
-            //    hit.collider.gameObject.GetComponent<SphereManager>().ChangeTag("Non-interactable");
-            //}
+			// game over
+			if (tag == "Interactable" && hit.distance < end_game_raycast_distance) {
+				GameObject.Find ("TestCube").gameObject.GetComponent<TestCubeBehavior> ().NewRaycastHit ();
+
+            }
         }
     }
 }
