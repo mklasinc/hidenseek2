@@ -78,7 +78,7 @@ public class NetworkManager : MonoBehaviour {
 	void OnJoinedRoom()
 	{
 
-		Debug.Log ("Current number of players is: " + PhotonNetwork.countOfPlayers);
+		Debug.Log ("Current number of players is: " + PhotonNetwork.playerList.Length);
 		//Waiting for rig to come into the network and connect the player
 		StartCoroutine (WaitForRig ());
 
@@ -107,7 +107,7 @@ public class NetworkManager : MonoBehaviour {
 //            GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
 //        };
 
-		if (PhotonNetwork.countOfPlayers == 1) {
+		if (PhotonNetwork.playerList.Length == 0) {
         	GameObject.Instantiate(seekerprefab, spawnLocation, Quaternion.identity);
         }else {
             GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
@@ -116,7 +116,7 @@ public class NetworkManager : MonoBehaviour {
         //count the players, if there's 2 players begin the game
         GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");
 //		Debug.Log ("unity count of players is:" + playercount.Length);
-		if(PhotonNetwork.countOfPlayers >= 2) {
+		if(PhotonNetwork.playerList.Length >= 2) {
             // start the game
 			foreach(GameObject g in playercount){
 				g.transform.Find("GameStartUI").gameObject.SetActive (true);
