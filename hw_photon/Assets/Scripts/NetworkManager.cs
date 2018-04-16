@@ -99,7 +99,7 @@ public class NetworkManager : MonoBehaviour {
             spawnLocation = Vector3.zero;
         }
 
-        GameObject go = GameObject.Find("Seeker(Clone)");
+//        GameObject go = GameObject.Find("Seeker(Clone)");
 //        if (go == null) {
 //            GameObject.Instantiate(seekerprefab, spawnLocation, Quaternion.identity);
 //        }
@@ -107,7 +107,7 @@ public class NetworkManager : MonoBehaviour {
 //            GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
 //        };
 
-		if (PhotonNetwork.playerList.Length == 0) {
+		if (PhotonNetwork.playerList.Length == 1) {
         	GameObject.Instantiate(seekerprefab, spawnLocation, Quaternion.identity);
         }else {
             GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
@@ -115,7 +115,6 @@ public class NetworkManager : MonoBehaviour {
 
         //count the players, if there's 2 players begin the game
         GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");
-//		Debug.Log ("unity count of players is:" + playercount.Length);
 		if(PhotonNetwork.playerList.Length >= 2) {
             // start the game
 			foreach(GameObject g in playercount){
