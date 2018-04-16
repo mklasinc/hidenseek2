@@ -109,8 +109,12 @@ public class NetworkManager : MonoBehaviour {
 
         //count the players, if there's 2 players begin the game
         GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");
-        if(playercount.Length >= 2) {
+		Debug.Log ("unity count of players is:" + playercount.Length);
+        if(playercount.Length >= 1) {
             // start the game
+			foreach(GameObject g in playercount){
+				g.transform.Find("GameStartUI").gameObject.SetActive (true);
+			}
         }
 
 		
