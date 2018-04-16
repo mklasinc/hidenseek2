@@ -109,8 +109,10 @@ public class NetworkManager : MonoBehaviour {
 
 		if (PhotonNetwork.playerList.Length == 1) {
         	GameObject.Instantiate(seekerprefab, spawnLocation, Quaternion.identity);
+			Debug.Log ("spawn a seeker!");
         }else {
             GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
+			Debug.Log ("spawn a hider!");
         };
 
         //count the players, if there's 2 players begin the game
