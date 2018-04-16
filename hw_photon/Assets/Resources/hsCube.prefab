@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  myClip: {fileID: 8300000, guid: d0f75ecd4981a7c45aac476a8ddcd1f4, type: 3}

@@ -20,6 +20,8 @@ public class NetworkManager : MonoBehaviour {
     public GameObject seekerprefab;
     public GameObject hiderprefab;
 
+	private bool spawningHider = false;
+
     //Array to hold the spawn points in the scene and an array to see which spawn points have been taken
     public Transform[] spawnPoints;
 	public bool[] spawnPointTaken;
@@ -113,6 +115,7 @@ public class NetworkManager : MonoBehaviour {
         }else {
             GameObject.Instantiate(hiderprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawn a hider!");
+			spawningHider = true;
         };
 
         //count the players, if there's 2 players begin the game
@@ -152,7 +155,11 @@ public class NetworkManager : MonoBehaviour {
 		GameObject headset = GameObject.Find ("Camera (eye)");
 		GameObject photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
 		photonCube.transform.SetParent (headset.transform);
-
+		if(spawningHider){
+			photonCube.GetComponent<Player> ().playSound ();
+			// photonCube.GetComponent<AudioSource>().Play();
+			spawningHider = false;
+		}
 		//Find the controllers and instantiate capsules ON NETOWRK -- set controllers as the parents of the capsules
        
         //Find left controller
