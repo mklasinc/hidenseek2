@@ -10,6 +10,7 @@ public class Player : Photon.MonoBehaviour {
 	public AudioClip myClip;
 
 	PhotonView photonView;
+	public GameObject emptyGameObject;
 
 	void Start(){
 		photonView = PhotonView.Get (this);
@@ -58,10 +59,12 @@ public class Player : Photon.MonoBehaviour {
 	}
 
 	[PunRPC] public void playSound(){
-		AudioSource asource = gameObject.AddComponent<AudioSource> ();
+		//Instansiate over network
+		GameObject audioHolder = PhotonNetwork.Instantiate(emptyGameObject.name,gameObject.transform.position,Quaternion.identity,0);
+		AudioSource asource = audioHolder.AddComponent<AudioSource> ();
 		asource.clip = myClip;
-		GetComponent<AudioSource> ().Play ();
-		Debug.Log ("my parent is " + gameObject.transform.parent.transform.parent.transform.parent);
+		audioHolder.GetComponent<AudioSource> ().Play ();
+		//Debug.Log ("my parent is " + gameObject.transform.parent.transform.parent.transform.parent);
 		
 		if (photonView.isMine)
 			photonView.RPC ("playSound",PhotonTargets.AllBuffered,photonView.viewID);

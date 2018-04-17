@@ -152,3 +152,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   myClip: {fileID: 8300000, guid: d0f75ecd4981a7c45aac476a8ddcd1f4, type: 3}
+  emptyGameObject: {fileID: 1738848286613578, guid: 6431a899296727f418648e6f36cc5e9a,
+    type: 2}
