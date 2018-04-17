@@ -6,7 +6,7 @@
       <File FileName="Assets\TestCubeBehavior.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\NetworkManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TransformManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="70" Column="57" />
+      <File FileName="Assets\Scripts\Player.cs" Line="66" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -63,7 +63,9 @@ public class Player : Photon.MonoBehaviour {
 		GameObject audioHolder = PhotonNetwork.Instantiate(emptyGameObject.name,gameObject.transform.position,Quaternion.identity,0);
 		AudioSource asource = audioHolder.AddComponent<AudioSource> ();
 		asource.clip = myClip;
+		audioHolder.GetComponent<AudioSource> ().loop = true;
 		audioHolder.GetComponent<AudioSource> ().Play ();
+
 		//Debug.Log ("my parent is " + gameObject.transform.parent.transform.parent.transform.parent);
 		
 		if (photonView.isMine)
