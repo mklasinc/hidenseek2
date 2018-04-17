@@ -65,8 +65,6 @@ public class Player : Photon.MonoBehaviour {
 		asource.clip = myClip;
 		audioHolder.GetComponent<AudioSource> ().loop = true;
 		audioHolder.GetComponent<AudioSource> ().Play ();
-
-		//Debug.Log ("my parent is " + gameObject.transform.parent.transform.parent.transform.parent);
 		
 		if (photonView.isMine)
 			photonView.RPC ("playSound",PhotonTargets.AllBuffered,photonView.viewID);

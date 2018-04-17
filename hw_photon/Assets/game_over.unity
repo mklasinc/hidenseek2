@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 81c64ef6a6954c94489b58920da10444, type: 2}
 --- !u!1 &529813335
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1225906396
 MeshRenderer:
@@ -258,7 +258,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1225906395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -343,7 +343,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1478375977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.91, y: -0.16, z: -2.17}
+  m_LocalPosition: {x: -0.71, y: 1.91, z: -2.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -407,7 +407,31 @@ Prefab:
         type: 2}
       propertyPath: playerprefab
       value: 
-      objectReference: {fileID: 1405735023796396, guid: daa487b47c9e35a4181e90cd68d7b870,
+      objectReference: {fileID: 1864958486835468, guid: b6c9ec3f793515748982cad02dd09b62,
+        type: 2}
+    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
+        type: 2}
+      propertyPath: seekerprefab
+      value: 
+      objectReference: {fileID: 1886367803823336, guid: af52db6f336f27048aa4caac86fd162b,
+        type: 2}
+    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
+        type: 2}
+      propertyPath: hiderprefab
+      value: 
+      objectReference: {fileID: 1450483056307258, guid: 07c2a55f516d22a489b421e69faea21f,
+        type: 2}
+    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
+        type: 2}
+      propertyPath: spawnPoint1
+      value: 
+      objectReference: {fileID: 1609961884813382, guid: 0d6a6d57937c9874ab2cfa4a2ae06f00,
+        type: 2}
+    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
+        type: 2}
+      propertyPath: spawnPoint2
+      value: 
+      objectReference: {fileID: 1259494499512932, guid: dd1db33151ba35841a918f06b45aad3a,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7a29eef19623040b5873803ed00277, type: 2}
