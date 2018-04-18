@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: fa23b605a92c848b7872c7383bd6d673
+timeCreated: 1523969946
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 200
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Apercu
+  fontNames:
+  - Apercu
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 82b305885c04446488f6c98bfbb6be81, type: 3}
+  - {fileID: 12800000, guid: 392a0f3ccbd944baaa9d72b949a00ef6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

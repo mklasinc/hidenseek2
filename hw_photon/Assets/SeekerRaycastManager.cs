@@ -27,10 +27,11 @@ public class SeekerRaycastManager : MonoBehaviour {
             Debug.Log(hit.collider.gameObject.name);
 
             // game over
-            //if (tag == "Interactable" && hit.distance < end_game_raycast_distance) {
-            //    GameObject.Find("TestCube").gameObject.GetComponent<TestCubeBehavior>().NewRaycastHit();
+            if (tag == "Interactable" && hit.distance < end_game_raycast_distance) {
+                Debug.Log("the distance from the cube is:" + hit.distance);
+                GameObject.Find("TestCube").gameObject.GetComponent<TestCubeBehavior>().NewRaycastHit();
 
-            //}
+            }
         }
     }
 }
