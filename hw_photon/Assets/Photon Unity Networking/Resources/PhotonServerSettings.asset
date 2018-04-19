@@ -49,4 +49,5 @@ MonoBehaviour:
   - MoveTo
   - SetNewParent
   - playSound
+  - ShowStartUI
   DisableAutoOpenWizard: 1

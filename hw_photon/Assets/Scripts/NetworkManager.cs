@@ -119,13 +119,22 @@ public class NetworkManager : MonoBehaviour {
 
         };
 
+		// find a player game object, display start game ui
+//		GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().ShowStartGameUI();
+//		Debug.Log(GameObject.FindWithTag("Player"));
+//		Debug.Log(GameObject.Find("hsCube(Clone)"));
+		Debug.Log(GameObject.Find("Canvas"));
+		headsetcubeprefab.GetComponent<Player>().ShowStartUI();
+
         //count the players, if there's 2 players begin the game
         GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");
-		if(PhotonNetwork.playerList.Length >= 2) {
+		if(PhotonNetwork.playerList.Length >= 1) {
+			Debug.Log ("show start game ui");
+//			GameObject.
             // start the game
-			foreach(GameObject g in playercount){
-				g.transform.Find("GameStartUI").gameObject.SetActive (true);
-			}
+//			foreach(GameObject g in playercount){
+//				g.transform.Find("GameStartUI").gameObject.SetActive (true);
+//			}
         }
 
 		
@@ -166,7 +175,7 @@ public class NetworkManager : MonoBehaviour {
        
         //Find left controller
         GameObject controllerLeft = GameObject.Find ("Controller (left)/Model");
-		Debug.Log (controllerLeft);
+		Debug.Log ("controller left"+controllerLeft);
 		GameObject capsuleHandLeft = PhotonNetwork.Instantiate(capsulehand.name, controllerLeft.transform.position, Quaternion.identity, 0);
 		capsuleHandLeft.transform.SetParent (controllerLeft.transform);
 

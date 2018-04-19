@@ -1,0 +1,2 @@
+C:\Users\Alternate Realities\Documents\hidenseek2\hw_photon\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+C:\Users\Alternate Realities\Documents\hidenseek2\hw_photon\obj\Debug\Assembly-CSharp-Editor.dll

@@ -75,4 +75,12 @@ public class Player : Photon.MonoBehaviour {
 //		if (photonView.isMine)
 //			photonView.RPC ("ShowEndGameUI",PhotonTargets.AllBuffered,photonView.viewID);
 //	}
+
+	[PunRPC] public void ShowStartUI(){
+		//StartGameUI.SetActive (true);
+		Debug.Log("called");
+		if (photonView.isMine)
+			photonView.RPC ("playSound",PhotonTargets.AllBuffered,photonView.viewID);
+	}
+
 }
