@@ -13,6 +13,7 @@ public class NetworkManagerRPCTest : MonoBehaviour {
 
     //Prefabs for the player, the cube to represent the HTC headset, and the capsule to represent the HTC controllers
     public GameObject cubeprefab;
+	public GameObject cube2prefab;
     public GameObject headsetcubeprefab;
     public GameObject capsulehand;
     public GameObject spawnPoint1;
@@ -95,6 +96,8 @@ public class NetworkManagerRPCTest : MonoBehaviour {
 
         //playerprefab is a camera rig for HTC Vive
 		PhotonNetwork.Instantiate(cubeprefab.name, spawnLocation, Quaternion.identity, 0);
+		// instantiate the second cube prefab
+		PhotonNetwork.Instantiate(cube2prefab.name, spawnLocation, Quaternion.identity, 0);
 
     }
 
