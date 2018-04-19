@@ -124,7 +124,7 @@ public class NetworkManager : MonoBehaviour {
 //		Debug.Log(GameObject.FindWithTag("Player"));
 //		Debug.Log(GameObject.Find("hsCube(Clone)"));
 		Debug.Log(GameObject.Find("Canvas"));
-		headsetcubeprefab.GetComponent<Player>().ShowStartUI();
+        GameObject.Find("Canvas").GetComponent<CanvasManager>().ShowUI();
 
         //count the players, if there's 2 players begin the game
         GameObject[] playercount = GameObject.FindGameObjectsWithTag("Player");

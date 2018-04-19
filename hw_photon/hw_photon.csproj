@@ -312,6 +312,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CanvasManager.cs" />
+    <Compile Include="Assets\hiderproperties.cs" />
     <Compile Include="Assets\HiderSoundManager.cs" />
     <Compile Include="Assets\NetworkController.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
@@ -388,6 +390,7 @@
     <Compile Include="Assets\Photon Unity Networking\Demos\Shared Assets\Scripts\IdleRunJump.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Shared Assets\Scripts\PlayerDiamond.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Shared Assets\Scripts\PlayerVariables.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonConverter.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
