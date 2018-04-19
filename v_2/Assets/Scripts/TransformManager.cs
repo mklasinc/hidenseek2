@@ -21,7 +21,8 @@ public class TransformManager : Photon.MonoBehaviour {
 			SyncedMovement ();
 		} else {
 			if (Input.GetKeyDown (KeyCode.Space)) {
-				ChangePlaneColor ();
+				Debug.Log ("key is pressed!");
+				ChangePlaneColor (1);
 			}
 		}
 			
@@ -107,7 +108,7 @@ public class TransformManager : Photon.MonoBehaviour {
 	}
 
 	// change the color of the plane
-	[PunRPC] public void ChangePlaneColor(){
+	[PunRPC] public void ChangePlaneColor(int num){
 		GameObject.Find ("Plane").GetComponent<Renderer> ().material.color = Color.red;
 		if (photonView.isMine)
 			photonView.RPC("ChangePlaneColor", PhotonTargets.OthersBuffered,photonView.viewID);
