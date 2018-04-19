@@ -97,7 +97,8 @@ public class NetworkManagerRPCTest : MonoBehaviour {
         //playerprefab is a camera rig for HTC Vive
 		PhotonNetwork.Instantiate(cubeprefab.name, spawnLocation, Quaternion.identity, 0);
 		// instantiate the second cube prefab
-		PhotonNetwork.Instantiate(cube2prefab.name, spawnLocation, Quaternion.identity, 0);
+		Vector3 newSpawnLoc = new Vector3(0,2,0);
+		PhotonNetwork.Instantiate(cube2prefab.name, newSpawnLoc, Quaternion.identity, 0);
 
     }
 

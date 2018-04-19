@@ -173,12 +173,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeprefab: {fileID: 1900567869847212, guid: 71ce8f1100a5a1c4cad60de329136d06, type: 2}
-  cube2prefab: {fileID: 1602720105856454, guid: aae953167651d442eb2da7e6e2924dad,
+  cube2prefab: {fileID: 1652920206761760, guid: bd3680576dc4f43768ef00e2f69d1456,
     type: 2}
   headsetcubeprefab: {fileID: 0}
   capsulehand: {fileID: 0}
-  spawnPoint1: {fileID: 0}
-  spawnPoint2: {fileID: 0}
+  spawnPoint1: {fileID: 1243993174257658, guid: 7697ce9795e4b4ba189fe347dc083f36,
+    type: 2}
+  spawnPoint2: {fileID: 1307576987127480, guid: fa61d3294ee5d44fa9c7c26b926589c3,
+    type: 2}
   spawnPoints: []
   spawnPointTaken: 
 --- !u!1 &123986015
