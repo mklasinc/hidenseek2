@@ -12,7 +12,7 @@ public class NetworkManagerRPCTest : MonoBehaviour {
     //private byte numPlayers = 8;
 
     //Prefabs for the player, the cube to represent the HTC headset, and the capsule to represent the HTC controllers
-    public GameObject playerprefab;
+    public GameObject cubeprefab;
     public GameObject headsetcubeprefab;
     public GameObject capsulehand;
     public GameObject spawnPoint1;
@@ -70,7 +70,7 @@ public class NetworkManagerRPCTest : MonoBehaviour {
 
         Debug.Log("Current number of players is: " + PhotonNetwork.countOfPlayers);
         //Waiting for rig to come into the network and connect the player
-        StartCoroutine(WaitForRig());
+//        StartCoroutine(WaitForRig());
 
         //Place the rig at a spawn point
         Vector3 spawnLocation;
@@ -87,14 +87,14 @@ public class NetworkManagerRPCTest : MonoBehaviour {
         }
         else {
             Debug.Log("No Spawn points assigned! Instantiating at 0, 0, 0");
-            spawnLocation = Vector3.zero;
+			spawnLocation = Vector3.left;
         }
 
 
         Debug.Log("Creating new player and spawn position is " + spawnLocation);
 
         //playerprefab is a camera rig for HTC Vive
-        GameObject.Instantiate(playerprefab, spawnLocation, Quaternion.identity);
+		PhotonNetwork.Instantiate(cubeprefab.name, spawnLocation, Quaternion.identity, 0);
 
     }
 

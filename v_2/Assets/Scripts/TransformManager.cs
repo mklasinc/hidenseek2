@@ -11,6 +11,7 @@ public class TransformManager : Photon.MonoBehaviour {
 
 	void Start(){
 		photonView = PhotonView.Get (this);
+
 	}
 
 	// Update is called once per frame
@@ -18,7 +19,13 @@ public class TransformManager : Photon.MonoBehaviour {
 		//Update the movement
 		if (!photonView.isMine) {
 			SyncedMovement ();
+		} else {
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				ChangePlaneColor ();
+			}
 		}
+			
+			
 	}
 
 	private float lastSynchronizationTime = 0f;
@@ -97,5 +104,12 @@ public class TransformManager : Photon.MonoBehaviour {
 		if (photonView.isMine)
 			photonView.RPC("DetachParent", PhotonTargets.OthersBuffered,photonView.viewID);
 
+	}
+
+	// change the color of the plane
+	[PunRPC] public void ChangePlaneColor(){
+		GameObject.Find ("Plane").GetComponent<Renderer> ().material.color = Color.red;
+		if (photonView.isMine)
+			photonView.RPC("ChangePlaneColor", PhotonTargets.OthersBuffered,photonView.viewID);
 	}
 }
