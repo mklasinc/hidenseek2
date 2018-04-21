@@ -47,4 +47,6 @@ MonoBehaviour:
   - MoveTo
   - SetNewParent
   - ChangePlaneColor
+  - ShowEndUI
+  - ShowStartUI
   DisableAutoOpenWizard: 1
