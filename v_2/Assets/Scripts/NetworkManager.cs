@@ -18,6 +18,10 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject spawnPoint1;
 	public GameObject spawnPoint2;
 
+	// spawn hider and seeker prefabs
+	public GameObject seekerprefab;
+	public GameObject hiderprefab;
+
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
 	public Transform[] spawnPoints;
 	public bool[] spawnPointTaken;
@@ -95,13 +99,22 @@ public class NetworkManager : MonoBehaviour {
         }else {
             Debug.Log("No Spawn points assigned! Instantiating at 0, 0, 0");
             spawnLocation = Vector3.zero;
-        }
+		};
 
+		// instantiate a hider or a seeker
+		// if no one is in the room seeker is spawned - else hider is spawn
+		if (PhotonNetwork.playerList.Length == 1) {
+			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
+			Debug.Log ("spawning a seeker!");
+		} else {
+			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
+			Debug.Log ("spawning a hider!");
+		};
 
 		Debug.Log ("Creating new player and spawn position is " + spawnLocation);
 
 		//playerprefab is a camera rig for HTC Vive
-		GameObject.Instantiate (playerprefab, spawnLocation, Quaternion.identity);
+//		GameObject.Instantiate (playerprefab, spawnLocation, Quaternion.identity);
 
 	}
 
