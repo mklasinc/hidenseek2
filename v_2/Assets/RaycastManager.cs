@@ -28,10 +28,10 @@ public class RaycastManager : MonoBehaviour {
 			Debug.Log("weve got a hit! object that was hit: " + hit.collider.gameObject.name);
 
 			// game over
-//			if (tag == "Interactable" && hit.distance < end_game_raycast_distance) {
+			if (tag == "Player" && hit.distance < end_game_raycast_distance) {
 //				GameObject.Find ("TestCube").gameObject.GetComponent<TestCubeBehavior> ().NewRaycastHit ();
-//				Debug.Log ("we hit the cube!");
-//			}
+				Debug.Log ("we hit the player game over!!!!");
+			}
 		}
 	}
 }

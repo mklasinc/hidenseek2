@@ -21,6 +21,8 @@ public class NetworkManager : MonoBehaviour {
 	// spawn hider and seeker prefabs
 	public GameObject seekerprefab;
 	public GameObject hiderprefab;
+	// canvas prefab
+	public GameObject canvasprefab;
 
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
 	public Transform[] spawnPoints;
@@ -106,9 +108,13 @@ public class NetworkManager : MonoBehaviour {
 		if (PhotonNetwork.playerList.Length == 1) {
 			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a seeker!");
+			GameObject.Instantiate (canvasprefab, spawnLocation, Quaternion.identity);
+			canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
 		} else {
 			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a hider!");
+			// only show the beginning UI if the hider has spawned
+//			hiderprefab.GetComponentInChildren<CanvasManager>().ShowStartUI();
 		};
 
 		Debug.Log ("Creating new player and spawn position is " + spawnLocation);

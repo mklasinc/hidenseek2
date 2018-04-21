@@ -12,7 +12,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pv = PhotonView.Get (this);
-
+//		ShowStartUI ();
 
 
 	}
@@ -29,11 +29,12 @@ public class CanvasManager : Photon.MonoBehaviour {
 		
 	}
 
-	[PunRPC] public void ShowStartUI(){
+	[PunRPC] public void ShowStartUI(int num){
+		Debug.Log ("we are called!");
 		startUI.SetActive (true);
 
 		if (pv.isMine) {
-			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+			pv.RPC("ShowStartUI", PhotonTargets.OthersBuffered,pv.viewID);
 		}
 	}
 
@@ -42,7 +43,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 		endUI.SetActive (true);
 
 		if (pv.isMine) {
-			photonView.RPC("ShowEndUI", PhotonTargets.OthersBuffered,photonView.viewID);
+			pv.RPC("ShowEndUI", PhotonTargets.OthersBuffered,pv.viewID);
 		}
 	}
 }

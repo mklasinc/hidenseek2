@@ -170,6 +170,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1534776771268966, guid: 5eb4e451cdc77b44ba0742d69f31ca50,
         type: 2}
+    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
+        type: 2}
+      propertyPath: canvasprefab
+      value: 
+      objectReference: {fileID: 1468127540163312, guid: 2f4239199597d7c46aa55ab6fe53c8f2,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7a29eef19623040b5873803ed00277, type: 2}
   m_IsPrefabParent: 0
