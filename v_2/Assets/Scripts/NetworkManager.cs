@@ -17,6 +17,8 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject capsulehand;
 	public GameObject spawnPoint1;
 	public GameObject spawnPoint2;
+	public AudioClip officeAudio;
+	public AudioSource sourceAudio;
 
 	// spawn hider and seeker prefabs
 	public GameObject seekerprefab;
@@ -33,7 +35,7 @@ public class NetworkManager : MonoBehaviour {
 		PhotonNetwork.ConnectUsingSettings("0.1");
 		PhotonNetwork.autoJoinLobby = true;
 
-		
+		sourceAudio = GetComponent<AudioSource> ();
 
         if(spawnPoint1 && spawnPoint2) {
             spawnPoints = new Transform[2];
@@ -85,6 +87,11 @@ public class NetworkManager : MonoBehaviour {
 		Debug.Log ("Current number of players is: " + PhotonNetwork.countOfPlayers);
 		//Waiting for rig to come into the network and connect the player
 		StartCoroutine (WaitForRig ());
+
+		//might need to check photon view is mine here
+		if (PhotonNetwork.countOfPlayers > 1) {
+			sourceAudio.Play ();
+		}
 
         //Place the rig at a spawn point
         Vector3 spawnLocation;

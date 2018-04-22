@@ -9,52 +9,51 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1427507622816610}
+  m_RootGameObject: {fileID: 1981334855491702}
   m_IsPrefabParent: 1
---- !u!1 &1427507622816610
+--- !u!1 &1981334855491702
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4543887803696092}
-  - component: {fileID: 114099162702290470}
-  - component: {fileID: 82230916007873490}
+  - component: {fileID: 4668757375804176}
+  - component: {fileID: 82857941429198860}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: AudioSourceBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4543887803696092
+--- !u!4 &4668757375804176
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1427507622816610}
+  m_GameObject: {fileID: 1981334855491702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29817772, y: 1.1871729, z: -0.3578868}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82230916007873490
+--- !u!82 &82857941429198860
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1427507622816610}
+  m_GameObject: {fileID: 1981334855491702}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 213898de1e6ad0d408de653e0228b411, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -121,33 +120,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114099162702290470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1427507622816610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ead811aa346d463d8fb421ef4e6939d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerprefab: {fileID: 1864958486835468, guid: ef315a89962f08f4183a073b9d9079a1,
-    type: 2}
-  headsetcubeprefab: {fileID: 1882753203465834, guid: f5bb07664c528ac42966c45deaa78580,
-    type: 2}
-  capsulehand: {fileID: 1147653991657544, guid: 852f5cfe0e0c07f459bead80ba2ceece,
-    type: 2}
-  spawnPoint1: {fileID: 0}
-  spawnPoint2: {fileID: 0}
-  officeAudio: {fileID: 8300000, guid: 213898de1e6ad0d408de653e0228b411, type: 3}
-  sourceAudio: {fileID: 82857941429198860, guid: 253ce69a108513844bb095ede135d52c,
-    type: 2}
-  seekerprefab: {fileID: 1534776771268966, guid: 5eb4e451cdc77b44ba0742d69f31ca50,
-    type: 2}
-  hiderprefab: {fileID: 1002386173934084, guid: 9c3db032bbc0ccb4bb0d85ec7b6cf919,
-    type: 2}
-  canvasprefab: {fileID: 1468127540163312, guid: 2f4239199597d7c46aa55ab6fe53c8f2,
-    type: 2}
-  spawnPoints: []
-  spawnPointTaken: 

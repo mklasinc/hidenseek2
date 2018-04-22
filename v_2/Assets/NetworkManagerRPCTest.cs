@@ -17,6 +17,8 @@ public class NetworkManagerRPCTest : MonoBehaviour {
     public GameObject capsulehand;
     public GameObject spawnPoint1;
     public GameObject spawnPoint2;
+	public AudioClip officeAudio;
+	public AudioSource sourceAudio;
 
     //Array to hold the spawn points in the scene and an array to see which spawn points have been taken
     public Transform[] spawnPoints;
@@ -26,6 +28,7 @@ public class NetworkManagerRPCTest : MonoBehaviour {
         PhotonNetwork.ConnectUsingSettings("0.1");
         PhotonNetwork.autoJoinLobby = true;
 
+		sourceAudio = GetComponent<AudioSource> ();
 
 
         if (spawnPoint1 && spawnPoint2) {
@@ -67,8 +70,14 @@ public class NetworkManagerRPCTest : MonoBehaviour {
     }
 
     void OnJoinedRoom() {
+		Debug.Log("We're playing audioo");
+		//sourceAudio.Play ();
+        //Debug.Log("Current number of players is: " + PhotonNetwork.countOfPlayers);
 
-        Debug.Log("Current number of players is: " + PhotonNetwork.countOfPlayers);
+		//if (PhotonNetwork.countOfPlayers > 1) {
+			//start playing sound
+
+		//}
         //Waiting for rig to come into the network and connect the player
 //        StartCoroutine(WaitForRig());
 
