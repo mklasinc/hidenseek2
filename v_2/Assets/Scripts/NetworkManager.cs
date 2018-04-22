@@ -108,12 +108,12 @@ public class NetworkManager : MonoBehaviour {
 		if (PhotonNetwork.playerList.Length == 1) {
 			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a seeker!");
+			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
+			//canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
 
 		} else {
 			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a hider!");
-			GameObject.Instantiate (canvasprefab, spawnLocation, Quaternion.identity);
-			canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
 			// only show the beginning UI if the hider has spawned
 //			hiderprefab.GetComponentInChildren<CanvasManager>().ShowStartUI();
 		};
