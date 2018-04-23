@@ -17,14 +17,16 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject capsulehand;
 	public GameObject spawnPoint1;
 	public GameObject spawnPoint2;
-	public AudioClip officeAudio;
-	public AudioSource sourceAudio;
+
 
 	// spawn hider and seeker prefabs
 	public GameObject seekerprefab;
 	public GameObject hiderprefab;
 	// canvas prefab
 	public GameObject canvasprefab;
+
+	//sound manager
+	public GameObject soundprefab;
 
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
 	public Transform[] spawnPoints;
@@ -35,7 +37,6 @@ public class NetworkManager : MonoBehaviour {
 		PhotonNetwork.ConnectUsingSettings("0.1");
 		PhotonNetwork.autoJoinLobby = true;
 
-		sourceAudio = GetComponent<AudioSource> ();
 
         if(spawnPoint1 && spawnPoint2) {
             spawnPoints = new Transform[2];
@@ -69,8 +70,8 @@ public class NetworkManager : MonoBehaviour {
 				Debug.Log ("rooms list length: " + roomsList.Length);
 				for (int i = 0; i < roomsList.Length; i++)
 				{
-					if (GUI.Button(new Rect(100, 250 + (110 * i), 250, 100), "Join " + roomsList[i].name))
-						PhotonNetwork.JoinRoom(roomsList[i].name);
+					if (GUI.Button(new Rect(100, 250 + (110 * i), 250, 100), "Join " + roomsList[i].Name))
+						PhotonNetwork.JoinRoom(roomsList[i].Name);
 				}
 			}
 		}
@@ -90,8 +91,9 @@ public class NetworkManager : MonoBehaviour {
 
 		//might need to check photon view is mine here
 		if (PhotonNetwork.countOfPlayers > 1) {
-			//trying to commit sound 
-			sourceAudio.Play ();
+			//instantiate sound if there is more than one player
+			Vector3 spawnSound = Vector3.zero;
+			PhotonNetwork.Instantiate (soundprefab.name, spawnSound, Quaternion.identity,0);
 		}
 
         //Place the rig at a spawn point
@@ -170,4 +172,5 @@ public class NetworkManager : MonoBehaviour {
 		capsuleHandRight.transform.SetParent (controllerRight.transform);
 
 	}
+
 }
