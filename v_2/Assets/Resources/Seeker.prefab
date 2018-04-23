@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3b14e72466f41429dcbe0568471547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioobj: {fileID: 82633002029378022, guid: 087ebf6f09f90fe4087326c46e248292, type: 2}
+  audioobj: {fileID: 82018477774582700}
   steps: {fileID: 8300000, guid: 6b4c41d6436520c448186e5fa0b5c67b, type: 3}
 --- !u!114 &114660265665531600
 MonoBehaviour:

@@ -13,15 +13,16 @@ public class Seeker : Photon.MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (photonView.isMine) {
-			if(Input.GetKeyDown(KeyCode.S))
-				makeSound ();
+		if (Input.GetKeyDown (KeyCode.S)) {
+			Debug.Log ("S was pressed");
+			makeSound ();
 		}
 	}
 
 	[PunRPC] void makeSound(){
 		audioobj.Play ();
 		if(photonView.isMine) {
+			Debug.Log ("Sending audio to everyone!");
 			photonView.RPC ("makeSound", PhotonTargets.OthersBuffered, 0);
 		}
 	}
