@@ -90,6 +90,7 @@ public class NetworkManager : MonoBehaviour {
 
 		//might need to check photon view is mine here
 		if (PhotonNetwork.countOfPlayers > 1) {
+			//trying to commit sound 
 			sourceAudio.Play ();
 		}
 
