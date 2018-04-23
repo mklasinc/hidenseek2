@@ -10,20 +10,23 @@ public class SoundManager : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sourceAudio = GetComponent<AudioSource> ();
-		playBGMusic ();
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (!sourceAudio.isPlaying) {
+			playBGMusic ();
+		}
+			
 	}
 
 	//function to play background music 
 	[PunRPC] public void playBGMusic(){
 		sourceAudio.Play ();
 		if(photonView.isMine) {
-			photonView.RPC ("playBGMusic", PhotonTargets.OthersBuffered, photonView.viewID);
+			photonView.RPC ("playBGMusic", PhotonTargets.OthersBuffered, 0);
 		}
 	}
 }
