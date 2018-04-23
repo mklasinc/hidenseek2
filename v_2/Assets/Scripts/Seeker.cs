@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Seeker : Photon.MonoBehaviour {
-	PhotonView photonView;
 	public AudioSource audioobj;
 	public AudioClip steps;
 
 	// Use this for initialization
 	void Start () {
-		photonView = PhotonView.Get (this);
 		audioobj = GetComponent<AudioSource> ();
 	}
 	
@@ -23,5 +21,8 @@ public class Seeker : Photon.MonoBehaviour {
 
 	[PunRPC] void makeSound(){
 		audioobj.Play ();
+		if(photonView.isMine) {
+			photonView.RPC ("makeSound", PhotonTargets.OthersBuffered, 0);
+		}
 	}
 }
