@@ -17,13 +17,13 @@ public class SoundManager : Photon.MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!sourceAudio.isPlaying) {
-			playBGMusic ();
+			playBGMusic (1);
 		}
 			
 	}
 
 	//function to play background music 
-	[PunRPC] public void playBGMusic(){
+	[PunRPC] public void playBGMusic(int n = 0){
 		sourceAudio.Play ();
 		if(photonView.isMine) {
 			photonView.RPC ("playBGMusic", PhotonTargets.OthersBuffered, 0);

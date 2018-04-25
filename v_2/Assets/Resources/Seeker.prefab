@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 50
-  end_game_raycast_distance: 10
+  end_game_raycast_distance: 5
   layers:
     serializedVersion: 2
     m_Bits: 4294967295
