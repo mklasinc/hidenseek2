@@ -119,6 +119,7 @@ public class NetworkManager : MonoBehaviour {
 			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a seeker!");
 			//canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
+//			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
 
 		} else {
 			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
