@@ -24,12 +24,13 @@ public class RaycastManager : MonoBehaviour {
 		RaycastHit hit;
 
 		if (Physics.Raycast(transform.position, forward, out hit, raycastDistance, layers)) {
-			string tag = hit.collider.gameObject.tag;
+			string tag = hit.collider.gameObject.tag;	
 			Debug.Log("weve got a hit! object that was hit: " + hit.collider.gameObject.name);
 			Debug.Log("the collision object has a tag: " + hit.collider.gameObject.tag);
 
 			// game over
-			if (tag == "Player" && hit.distance < end_game_raycast_distance) {
+//			if (tag == "Player" && hit.distance < end_game_raycast_distance) {
+			if (hit.collider.gameObject.name == "hsCube(Clone)" && hit.distance < end_game_raycast_distance) {
 //				GameObject.Find ("TestCube").gameObject.GetComponent<TestCubeBehavior> ().NewRaycastHit ();
 				Debug.Log ("we hit the player game over!!!!");
 			}
