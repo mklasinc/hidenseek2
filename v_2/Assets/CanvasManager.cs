@@ -31,17 +31,19 @@ public class CanvasManager : Photon.MonoBehaviour {
 		startUI.SetActive (true);
 
 		if (photonView.isMine) {
-//			StartCoroutine(WaitBeforeHidingStartUI(5));
+			StartCoroutine(WaitBeforeHidingStartUI(5));
 			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 		}
 	}
 
 	IEnumerator WaitBeforeHidingStartUI(int s){
+		Debug.Log ("waiting ...");
 		yield return new WaitForSeconds(s);
-		HideStartUI ();
+		Debug.Log ("calling hide start ui");
+		HideStartUI (1);
 	}
 
-	[PunRPC] public void HideStartUI(){
+	[PunRPC] public void HideStartUI(int n){
 		Debug.Log ("hide start ui");
 		startUI.SetActive (false);
 
