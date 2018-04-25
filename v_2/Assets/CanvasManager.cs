@@ -11,7 +11,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ShowStartUI ();
+		ShowStartUI (1);
 	}
 	
 	// Update is called once per frame
@@ -26,12 +26,12 @@ public class CanvasManager : Photon.MonoBehaviour {
 		
 	}
 
-	[PunRPC] public void ShowStartUI(){
+	[PunRPC] public void ShowStartUI(int n){
 		Debug.Log ("we are called!");
 		startUI.SetActive (true);
 
 		if (photonView.isMine) {
-			StartCoroutine(WaitBeforeHidingStartUI(5));
+//			StartCoroutine(WaitBeforeHidingStartUI(5));
 			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 		}
 	}
