@@ -52,4 +52,5 @@ MonoBehaviour:
   - makeSound
   - playBGMusic
   - HideStartUI
+  - playBGSound
   DisableAutoOpenWizard: 1
