@@ -1,0 +1,31 @@
+NOTES
+
+OFFICE SOUNDS ———————————————
+- conversations [x]
+- phone calls [x]
+- printers, [x]
+- people typing [x]
+- machine buzz [x]
+- elevators [x]
+- printer/fax machine [x]
+- coffee machine [x]
+
+- footsteps
+
+
+- collisions
+  - table (wood)
+
+
+COLLISIONS
+- wood
+- footsteps? (on movement?/ carpet brushes?)
+- heavy
+- paper in the trashcan 
+
+
+
+PlayOneShot
+
+
+  

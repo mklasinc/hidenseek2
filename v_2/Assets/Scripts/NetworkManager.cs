@@ -49,6 +49,9 @@ public class NetworkManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.B)) {
+			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
+		}
 	}
 
 	//Photon function for GUI list of available rooms
