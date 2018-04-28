@@ -28,6 +28,7 @@ public class NetworkManager : MonoBehaviour {
 	//sound manager
 	public GameObject soundprefab;
 
+
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
 	public Transform[] spawnPoints;
 	public bool[] spawnPointTaken;
@@ -49,8 +50,13 @@ public class NetworkManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 		if (Input.GetKeyDown (KeyCode.B)) {
 			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
+=======
+		if(Input.GetKeyDown(KeyCode.B)){
+			PhotonNetwork.Instantiate("SoundEffect", Vector3.zero, Quaternion.identity, 0);
+>>>>>>> 837df0784b4e187169dafb98ba0c6a22499ccd89
 		}
 	}
 
@@ -175,6 +181,10 @@ public class NetworkManager : MonoBehaviour {
 		GameObject capsuleHandRight = PhotonNetwork.Instantiate(capsulehand.name, controllerRight.transform.position, Quaternion.identity, 0);
 		capsuleHandRight.transform.SetParent (controllerRight.transform);
 
+	}
+
+	public void PlaySFX(Vector3 sound_position, string sound_name){
+		PhotonNetwork.Instantiate (sound_name, sound_position, Quaternion.identity,0);
 	}
 
 }
