@@ -50,13 +50,9 @@ public class NetworkManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-<<<<<<< HEAD
+
 		if (Input.GetKeyDown (KeyCode.B)) {
 			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
-=======
-		if(Input.GetKeyDown(KeyCode.B)){
-			PhotonNetwork.Instantiate("SoundEffect", Vector3.zero, Quaternion.identity, 0);
->>>>>>> 837df0784b4e187169dafb98ba0c6a22499ccd89
 		}
 	}
 
