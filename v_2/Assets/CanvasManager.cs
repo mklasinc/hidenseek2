@@ -44,18 +44,24 @@ public class CanvasManager : Photon.MonoBehaviour {
 
 	[PunRPC] public void PlayerReady(bool b){
 		
-		Debug.Log ("one player seems to be ready!");
+
+
+
 
 		if (photonView.isMine) {
 			myPlayerReady = b;
-			photonView.RPC ("ShowStartUI", PhotonTargets.OthersBuffered, b);
+			Debug.Log ("my");
+			if (myPlayerReady && otherPlayerReady) {
+				Debug.Log ("both players are ready!");
+			} else {
+				photonView.RPC ("PlayerReady", PhotonTargets.OthersBuffered, b);
+			}
+
 		} else {
 			otherPlayerReady = b;
 		};
 
-		if (myPlayerReady && otherPlayerReady) {
-			Debug.Log ("both players are ready!");
-		};
+
 	}
 
 	IEnumerator WaitBeforeHidingStartUI(int s){
