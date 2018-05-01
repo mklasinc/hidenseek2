@@ -7,10 +7,11 @@ public class CanvasManager : Photon.MonoBehaviour {
 
 	public GameObject startUI;
 	public GameObject endUI;
-
+	GameObject pointer;
 
 	// Use this for initialization
 	void Start () {
+		pointer = GameObject.FindGameObjectWithTag ("Pointer");
 		ShowStartUI (1);
 	}
 	
@@ -30,12 +31,11 @@ public class CanvasManager : Photon.MonoBehaviour {
 		Debug.Log ("we are called!");
 		startUI.SetActive (true);
 
-		GameObject[] pointer = GameObject.FindGameObjectsWithTag ("Pointer");
 		Debug.Log ("our pointer is" + pointer);
-		Debug.Log ("pointer length is" + pointer.Length);
+		pointer.SetActive (false);
 
 		if (photonView.isMine) {
-			StartCoroutine(WaitBeforeHidingStartUI(5));
+			StartCoroutine(WaitBeforeHidingStartUI(10));
 			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 		}
 	}
@@ -50,6 +50,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 	[PunRPC] public void HideStartUI(int n){
 		Debug.Log ("hide start ui");
 		startUI.SetActive (false);
+		pointer.SetActive (true);
 
 		if (photonView.isMine) {
 			photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
