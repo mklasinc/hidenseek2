@@ -253,6 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startUI: {fileID: 1138098841982072}
   endUI: {fileID: 1873791389952240}
+  myPlayerReady: 0
+  otherPlayerReady: 0
 --- !u!114 &114807083896188986
 MonoBehaviour:
   m_ObjectHideFlags: 1

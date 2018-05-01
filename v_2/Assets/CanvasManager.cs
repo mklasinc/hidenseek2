@@ -8,6 +8,8 @@ public class CanvasManager : Photon.MonoBehaviour {
 	public GameObject startUI;
 	public GameObject endUI;
 	GameObject pointer;
+	public bool myPlayerReady = false;
+	public bool otherPlayerReady = false;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +39,19 @@ public class CanvasManager : Photon.MonoBehaviour {
 		if (photonView.isMine) {
 			StartCoroutine(WaitBeforeHidingStartUI(10));
 			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+		}
+	}
+
+	[PunRPC] public void PlayerReady(bool b){
+		otherPlayerReady = b;
+		Debug.Log ("one player seems to be ready!");
+
+		if (photonView.isMine) {
+			myPlayerReady = b;
+			if (myPlayerReady && otherPlayerReady) {
+				Debug.Log ("both players are ready!");
+			};
+			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,b);
 		}
 	}
 

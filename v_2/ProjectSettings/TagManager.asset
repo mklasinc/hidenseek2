@@ -8,6 +8,7 @@ TagManager:
   - Seeker
   - Hider
   - Pointer
+  - Canvas
   layers:
   - Default
   - TransparentFX
