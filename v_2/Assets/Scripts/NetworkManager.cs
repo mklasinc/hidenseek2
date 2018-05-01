@@ -161,7 +161,9 @@ public class NetworkManager : MonoBehaviour {
 		//Find headset and instaniate cube ON NETWORK -- set headset as cube's parent
 		GameObject headset = GameObject.Find ("Camera (eye)");
 		GameObject photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+
 		photonCube.transform.SetParent (headset.transform);
+
 
 		//Find the controllers and instantiate capsules ON NETOWRK -- set controllers as the parents of the capsules
        
@@ -169,6 +171,7 @@ public class NetworkManager : MonoBehaviour {
 		GameObject controllerLeft = GameObject.Find ("Controller (left)/Model");
 		Debug.Log (controllerLeft);
 		GameObject capsuleHandLeft = PhotonNetwork.Instantiate(capsulehand.name, controllerLeft.transform.position, Quaternion.identity, 0);
+
 		capsuleHandLeft.transform.SetParent (controllerLeft.transform);
 
 		//Now for right controller
@@ -176,6 +179,13 @@ public class NetworkManager : MonoBehaviour {
 		GameObject controllerRight = GameObject.Find("Controller (right)/Model");
 		GameObject capsuleHandRight = PhotonNetwork.Instantiate(capsulehand.name, controllerRight.transform.position, Quaternion.identity, 0);
 		capsuleHandRight.transform.SetParent (controllerRight.transform);
+
+		// if we spawn a hider make the size of the body parts smaller
+		if (PhotonNetwork.countOfPlayers > 1) {
+			photonCube.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+			capsuleHandRight.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+			capsuleHandLeft.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+		}
 
 	}
 
