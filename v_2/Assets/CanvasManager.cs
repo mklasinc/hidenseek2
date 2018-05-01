@@ -50,7 +50,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 
 		if (photonView.isMine) {
 			myPlayerReady = b;
-			Debug.Log ("my");
+			Debug.Log ("my player is ready");
 			if (myPlayerReady && otherPlayerReady) {
 				Debug.Log ("both players are ready!");
 			} else {
@@ -58,6 +58,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 			}
 
 		} else {
+			Debug.Log ("other player is ready!");
 			otherPlayerReady = b;
 		};
 
