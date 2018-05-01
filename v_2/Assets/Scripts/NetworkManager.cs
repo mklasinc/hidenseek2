@@ -56,7 +56,7 @@ public class NetworkManager : MonoBehaviour {
 			GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 			if (canvas != null) {
 //				Debug.Log ("one player is ready!");
-				canvas.GetComponent<PhotonView> ().RequestOwnership ();
+//				canvas.GetComponent<PhotonView> ().RequestOwnership ();
 				canvas.GetComponent<CanvasManager>().PlayerReady (true);
 			};
 //			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
