@@ -59,7 +59,7 @@ public class NetworkManager : MonoBehaviour {
 				canvas.GetComponent<PhotonView> ().RequestOwnership ();
 				canvas.GetComponent<CanvasManager>().PlayerReady (true);
 			};
-			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
+//			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
 		}
 	}
 

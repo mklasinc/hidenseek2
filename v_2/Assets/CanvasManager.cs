@@ -43,15 +43,18 @@ public class CanvasManager : Photon.MonoBehaviour {
 	}
 
 	[PunRPC] public void PlayerReady(bool b){
-		otherPlayerReady = b;
+		
 		Debug.Log ("one player seems to be ready!");
 
 		if (photonView.isMine) {
 			myPlayerReady = b;
 			if (myPlayerReady && otherPlayerReady) {
 				Debug.Log ("both players are ready!");
-			};
-			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,b);
+			}
+			;
+			photonView.RPC ("ShowStartUI", PhotonTargets.OthersBuffered, b);
+		} else {
+			otherPlayerReady = b;
 		}
 	}
 
