@@ -13,7 +13,9 @@ public class PlayersReady : Photon.MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (countOfPlayersReady >= 2) {
+			Debug.Log ("start the game!!!!");
+		}
 	}
 
 	public void NewPlayerIsReady(bool b){
