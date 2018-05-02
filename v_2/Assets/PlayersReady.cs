@@ -16,6 +16,7 @@ public class PlayersReady : Photon.MonoBehaviour {
 		if (countOfPlayersReady >= 2) {
 			Debug.Log ("start the game!!!!");
 			GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
+			canvas.GetComponent<PhotonView> ().RequestOwnership ();
 			canvas.GetComponent<CanvasManager> ().HideStartUI (1);
 			Destroy(this.gameObject);
 		}
