@@ -55,4 +55,5 @@ MonoBehaviour:
   - playBGSound
   - PlayerReady
   - UpdatePlayerReadCounter
+  - ShowTimerUI
   DisableAutoOpenWizard: 1

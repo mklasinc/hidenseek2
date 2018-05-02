@@ -30,6 +30,9 @@ public class NetworkManager : MonoBehaviour {
 	//sound manager
 	public GameObject soundprefab;
 
+	//timer manager
+	public GameObject timerprefab;
+
 	// game state variables
 	bool gameBegin = false;
 	bool gameOver = false;
@@ -240,6 +243,12 @@ public class NetworkManager : MonoBehaviour {
 
 		}
 	}
+
+	public void StartGameTimer(){
+		Debug.Log ("will try to instantiate a timer!");
+		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);
+	}
+
 
 
 }

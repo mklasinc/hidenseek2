@@ -8,14 +8,20 @@ public class TimerManager : MonoBehaviour {
 	public float game_max_duration;
 	float start_time;
 	bool game_status;
-	public GameObject canvas;
+//	public GameObject canvas;
+//	GameObject canvas
 	Text timer_text;
+
+	//timer time left
+	float time_left;
 
 	// Use this for initialization
 	void Start () {
+		time_left = game_max_duration; // set initial timer value
 		start_time = StartTimer ();
 		SetGameStatus (true);
-		timer_text = canvas.GetComponent<Text> ();
+		Debug.Log ("timer has been instantiated!");
+//		timer_text = canvas.GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
@@ -31,8 +37,8 @@ public class TimerManager : MonoBehaviour {
 
 	void UpdateTimer(){
 		float time_elapsed = Mathf.Floor(Time.time - start_time);
-		float time_left = game_max_duration - time_elapsed;
-		Debug.Log (time_left);
+		time_left = game_max_duration - time_elapsed;
+		Debug.Log ("time left is:" + time_left);
 		timer_text.text = time_left.ToString();
 		//game over logic
 		if (time_left == 0) {
@@ -41,6 +47,10 @@ public class TimerManager : MonoBehaviour {
 			timer_text.text = "Game Over";
 		}
 
+	}
+
+	public float GetTimerValue(){
+		return time_left;
 	}
 
 	bool GameOn(){
