@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114216958280889036}
   - component: {fileID: 114977502988457848}
   - component: {fileID: 120204054577067012}
+  - component: {fileID: 114876769766756042}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -356,6 +357,7 @@ GameObject:
   - component: {fileID: 114929016667090436}
   - component: {fileID: 114450862618247142}
   - component: {fileID: 120940199888243910}
+  - component: {fileID: 114884315127904098}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: left
@@ -957,7 +959,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019662343163722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b0c7d8e90ab8f6469a92f115cc282e3, type: 3}
   m_Name: 
@@ -1395,13 +1397,35 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114929016667090436
+--- !u!114 &114876769766756042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019662343163722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752df0f27c0fbe542826077846b8dd08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114884315127904098
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978831364979566}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e4efc9725db2643b323cb7b18661ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114929016667090436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978831364979566}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b0c7d8e90ab8f6469a92f115cc282e3, type: 3}
   m_Name: 

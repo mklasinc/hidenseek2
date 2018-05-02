@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 114420307691496890}
   - component: {fileID: 114815098555737080}
   - component: {fileID: 120438185580823638}
+  - component: {fileID: 114171812786652414}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -264,6 +265,7 @@ GameObject:
   - component: {fileID: 114454417748311276}
   - component: {fileID: 114253611635159464}
   - component: {fileID: 120706375657837542}
+  - component: {fileID: 114407432644731682}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: left
@@ -846,6 +848,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114171812786652414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400137520462812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752df0f27c0fbe542826077846b8dd08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114177629889938708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1044,13 +1057,24 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u2190Select Prefab (Swipe Up)"
+--- !u!114 &114407432644731682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769407694989168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e4efc9725db2643b323cb7b18661ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114420307691496890
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400137520462812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b0c7d8e90ab8f6469a92f115cc282e3, type: 3}
   m_Name: 
@@ -1063,7 +1087,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769407694989168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b0c7d8e90ab8f6469a92f115cc282e3, type: 3}
   m_Name: 

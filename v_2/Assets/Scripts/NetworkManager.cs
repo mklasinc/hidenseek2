@@ -28,6 +28,11 @@ public class NetworkManager : MonoBehaviour {
 	//sound manager
 	public GameObject soundprefab;
 
+	// game state variables
+	bool gameBegin = false;
+	bool gameOver = false;
+	int countOfPlayersReady = 0;
+
 
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
 	public Transform[] spawnPoints;
@@ -60,6 +65,10 @@ public class NetworkManager : MonoBehaviour {
 				canvas.GetComponent<CanvasManager>().PlayerReady (true);
 			};
 //			PhotonNetwork.Instantiate ("SoundEffect", Vector3.zero, Quaternion.identity, 0);
+		}
+
+		if (countOfPlayersReady > 1) {
+			Debug.Log ("both players seem to be ready, start the game!");
 		}
 	}
 
@@ -199,5 +208,29 @@ public class NetworkManager : MonoBehaviour {
 	public void PlaySFX(Vector3 sound_position, string sound_name){
 		PhotonNetwork.Instantiate (sound_name, sound_position, Quaternion.identity,0);
 	}
+
+	public bool HasGameBegun(){
+		return gameBegin;
+	}
+
+	public bool IsGameOver(){
+		return gameOver;
+	}
+
+	public void SetGameOver(string s,bool b){
+		if (s.Contains ("game begin")) {
+			gameBegin = b;
+		} else if (s.Contains ("game over")) {
+			gameOver = b;
+		}
+	}
+
+	public void NewPlayerIsReady(bool b){
+		if (b == true) {
+			Debug.Log ("one player is ready!");
+			countOfPlayersReady++;
+		}
+	}
+
 
 }

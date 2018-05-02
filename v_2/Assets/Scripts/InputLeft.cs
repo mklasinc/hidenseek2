@@ -5,12 +5,11 @@ using UnityEngine;
 
 // This script manages controller input. Here we use trigger or press to move a game object.
 // Attach this script to each controller (Controller Left or Controller Right)
-public class InputManager : Photon.MonoBehaviour {
+public class InputLeft : Photon.MonoBehaviour {
 	// Getting a reference to the controller GameObject
 	private SteamVR_TrackedObject trackedObj;
 	// Getting a reference to the controller Interface
 	private SteamVR_Controller.Device Controller;
-	public GameObject spherePrefab;
 
 	// manager
 	GameObject gameManager;
@@ -31,7 +30,7 @@ public class InputManager : Photon.MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Controller = SteamVR_Controller.Input((int)trackedObj.index);
-		
+
 		// Getting the Touchpad Axis
 		if (Controller.GetAxis() != Vector2.zero)
 		{
@@ -41,50 +40,26 @@ public class InputManager : Photon.MonoBehaviour {
 		// Getting the Trigger press
 		if (Controller.GetHairTriggerDown())
 		{
-			Debug.Log ("hairline trigger is pressed");
-			if (!playerIsReady) {
-				playerIsReady = true;
-				gameManager.GetComponent<NetworkManager> ().NewPlayerIsReady (true);
-			}
-//			GameObject go = GameObject.Find ("Sphere(Clone)");
-//
-//            if (go == null) {
-//                go = GameObject.Find("Cube");
-//            }
-//
-//
-//            //This line is the one that changes the value of photonView.isMine on the specified GameObject
-//            go.GetComponent<PhotonView> ().RequestOwnership ();
-//			go.GetComponent<TransformManager> ().SetNewParent (this.transform);
+
 
 		}
 
 		// Getting the Trigger Release
 		if (Controller.GetHairTriggerUp())
 		{
-//			GameObject go = GameObject.Find ("Sphere(Clone)");
-//
-//            if (go == null) {
-//                go = GameObject.Find("Cube");
-//            }
-//
-//            // Make sure we have ownership before we do anything the the objects
-//            go.GetComponent<PhotonView> ().RequestOwnership ();
-//			go.GetComponent<TransformManager>().DetachParent ();
+			
 		}
 
 		// Getting the Grip Press
 		if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
 		{
-//			Debug.Log(gameObject.name + " Grip Press");
-//
-//			PhotonNetwork.Instantiate(spherePrefab.name, new Vector3(0,3,0), Quaternion.identity, 0);
+
 		}
 
 		// Getting the Grip Release
 		if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
 		{
-//			Debug.Log(gameObject.name + " Grip Release");
+	
 		}
 	}
 }
