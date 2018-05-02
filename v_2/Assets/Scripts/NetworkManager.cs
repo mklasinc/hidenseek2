@@ -229,6 +229,8 @@ public class NetworkManager : MonoBehaviour {
 		if (b == true) {
 			Debug.Log ("one player is ready!");
 			countOfPlayersReady++;
+			Debug.Log ("new count of players ready is" + countOfPlayersReady);
+
 		}
 	}
 
