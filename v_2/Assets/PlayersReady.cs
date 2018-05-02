@@ -32,7 +32,8 @@ public class PlayersReady : Photon.MonoBehaviour {
 	}
 
 	[PunRPC] public void UpdatePlayerReadCounter(int n){
-
+		Debug.Log ("update player counter!");
+		Debug.Log ("call is mine?" + photonView.isMine);
 		if (photonView.isMine) {
 			photonView.RPC ("UpdatePlayerReadCounter", PhotonTargets.OthersBuffered, n);
 		} else {
