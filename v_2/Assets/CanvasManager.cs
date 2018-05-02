@@ -37,7 +37,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 		pointer.SetActive (false);
 
 		if (photonView.isMine) {
-			StartCoroutine(WaitBeforeHidingStartUI(10));
+//			StartCoroutine(WaitBeforeHidingStartUI(10));
 			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 		}
 	}
