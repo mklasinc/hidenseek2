@@ -20,7 +20,7 @@ public class PlayersReady : Photon.MonoBehaviour {
 		if (b == true) {
 			Debug.Log ("one player is ready!");
 			countOfPlayersReady++;
-			Debug.Log ("new count of players ready is" + countOfPlayersReady);
+			Debug.Log ("personal count of players ready is" + countOfPlayersReady);
 			UpdatePlayerReadCounter (countOfPlayersReady);
 		}
 	}
@@ -30,7 +30,8 @@ public class PlayersReady : Photon.MonoBehaviour {
 		if (photonView.isMine) {
 			photonView.RPC ("UpdatePlayerReadCounter", PhotonTargets.OthersBuffered, n);
 		} else {
-			Debug.Log ("new count of players ready is" + countOfPlayersReady);
+			countOfPlayersReady = n;
+			Debug.Log ("global count of players ready is" + countOfPlayersReady);
 		}
 	}
 }
