@@ -35,6 +35,9 @@ public class NetworkManager : MonoBehaviour {
 	bool gameOver = false;
 	int countOfPlayersReady = 0;
 
+	//sfx prefabs
+	public GameObject printer;
+
 
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
 	public Transform[] spawnPoints;
