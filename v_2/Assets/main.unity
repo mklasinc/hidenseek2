@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4973042035171256, guid: 0fe18acc7d4f342bc90692646081423c, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1583448086276948, guid: 0fe18acc7d4f342bc90692646081423c, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -200,21 +200,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
         type: 2}
-      propertyPath: timerprefab
+      propertyPath: printer
       value: 
-      objectReference: {fileID: 1571916912875964, guid: a377fd5a81b164669bf692fe638c2114,
-        type: 2}
-    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
-        type: 2}
-      propertyPath: spawnPoint1
-      value: 
-      objectReference: {fileID: 1243993174257658, guid: 7697ce9795e4b4ba189fe347dc083f36,
-        type: 2}
-    - target: {fileID: 114099162702290470, guid: 0f7a29eef19623040b5873803ed00277,
-        type: 2}
-      propertyPath: spawnPoint2
-      value: 
-      objectReference: {fileID: 1307576987127480, guid: fa61d3294ee5d44fa9c7c26b926589c3,
+      objectReference: {fileID: 1517382763408158, guid: ea6ce5ea9826e304e807b709124cebc8,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7a29eef19623040b5873803ed00277, type: 2}
@@ -298,7 +286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4638643022593948, guid: 7697ce9795e4b4ba189fe347dc083f36, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7697ce9795e4b4ba189fe347dc083f36, type: 2}
