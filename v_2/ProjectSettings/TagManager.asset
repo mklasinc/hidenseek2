@@ -11,6 +11,7 @@ TagManager:
   - Canvas
   - Manager
   - GameBegin
+  - Timer
   layers:
   - Default
   - TransparentFX

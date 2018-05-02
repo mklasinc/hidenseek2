@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon;
 
 public class CanvasManager : Photon.MonoBehaviour {
 
 	public GameObject startUI;
 	public GameObject endUI;
+	public GameObject timerUI;
 	GameObject pointer;
-	public bool myPlayerReady = false;
-	public bool otherPlayerReady = false;
+
+	bool gameOn = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -29,11 +32,24 @@ public class CanvasManager : Photon.MonoBehaviour {
 		
 	}
 
+	// show start ui
+
 	[PunRPC] public void ShowStartUI(int n){
 		Debug.Log ("we are called!");
+		// activate the start ui
 		startUI.SetActive (true);
+		// show the right text
+		GameObject h = GameObject.Find("Hider(Clone");
+		GameObject s = GameObject.Find("Seeker(Clone");
+		string m = "";
+		if (h != null) {
+			m = "you are a hider!";
+		} else if (s != null) {
+			m = "you are a seeker!";
+		};
+		startUI.GetComponentInChildren<Text>().text = m;
 
-		Debug.Log ("our pointer is" + pointer);
+		// activate the teleportation pointer
 		pointer.SetActive (false);
 
 		if (photonView.isMine) {
@@ -46,23 +62,6 @@ public class CanvasManager : Photon.MonoBehaviour {
 		
 
 
-
-
-		if (photonView.isMine) {
-			myPlayerReady = b;
-			Debug.Log ("my player is ready");
-			if (myPlayerReady && otherPlayerReady) {
-				Debug.Log ("both players are ready!");
-			} else {
-				photonView.RPC ("PlayerReady", PhotonTargets.OthersBuffered, b);
-			}
-
-		} else {
-			Debug.Log ("other player is ready!");
-			otherPlayerReady = b;
-		};
-
-
 	}
 
 	IEnumerator WaitBeforeHidingStartUI(int s){
@@ -73,15 +72,32 @@ public class CanvasManager : Photon.MonoBehaviour {
 	}
 
 	[PunRPC] public void HideStartUI(int n){
-		Debug.Log ("hide start ui");
-		startUI.SetActive (false);
-		pointer.SetActive (true);
-		photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
-		Debug.Log ("we have called the other");
-		if (photonView.isMine) {
-			Debug.Log ("call other!");
+		if (!gameOn) {
+			Debug.Log ("hide start ui");
+			startUI.SetActive (false);
+			pointer.SetActive (true);
 			photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+			Debug.Log ("we have called the other");
+			if (photonView.isMine) {
+				Debug.Log ("call other!");
+				photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+			};
+			Debug.Log ("activate timer UI!");
+			timerUI.SetActive (false);
+			GameObject.FindGameObjectWithTag ("Manager").GetComponent<NetworkManager> ().StartGameTimer ();
+//			ShowTimerUI ();
+			gameOn = true;
 		}
+
+//		StartGame ();
+	}
+
+	[PunRPC] public void ShowTimerUI(int n){
+		timerUI.SetActive (false);
+//		if (photonView.isMine) {
+//			Debug.Log ("call other!");
+//			photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+//		};
 	}
 
 	[PunRPC] public void ShowEndUI(){
