@@ -10,6 +10,7 @@ TagManager:
   - Pointer
   - Canvas
   - Manager
+  - GameBegin
   layers:
   - Default
   - TransparentFX

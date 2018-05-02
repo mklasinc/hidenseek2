@@ -12,7 +12,8 @@ public class InputRight : Photon.MonoBehaviour {
 	private SteamVR_Controller.Device Controller;
 
 	// manager
-	GameObject gameManager;
+//	GameObject gameManager;
+	GameObject gameBeginManager;
 
 	// player ready variable
 	bool playerIsReady = false;
@@ -24,7 +25,8 @@ public class InputRight : Photon.MonoBehaviour {
 	{
 		// initialize the trackedObj to the component of the controller to which the script is attached
 		trackedObj = GetComponentInParent<SteamVR_TrackedObject>();
-		gameManager = GameObject.FindGameObjectWithTag ("Manager");
+//		gameManager = GameObject.FindGameObjectWithTag ("Manager");
+
 	}
 
 	// Update is called once per frame
@@ -41,10 +43,15 @@ public class InputRight : Photon.MonoBehaviour {
 		if (Controller.GetHairTriggerDown())
 		{
 			Debug.Log ("hairline trigger is pressed");
-			if (!playerIsReady) {
+			gameBeginManager = GameObject.FindGameObjectWithTag ("GameBegin");
+			if (gameBeginManager != null && !playerIsReady) {
 				playerIsReady = true;
-				gameManager.GetComponent<NetworkManager> ().NewPlayerIsReady (true);
+				//	gameManager.GetComponent<NetworkManager> ().NewPlayerIsReady (true);
+				gameBeginManager.GetComponent<PlayersReady> ().NewPlayerIsReady (true);
+
 			}
+	
+
 
 		}
 

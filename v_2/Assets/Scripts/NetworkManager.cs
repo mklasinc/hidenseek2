@@ -24,6 +24,8 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject hiderprefab;
 	// canvas prefab
 	public GameObject canvasprefab;
+	// game begin logic
+	public GameObject gameBeginPrefab;
 
 	//sound manager
 	public GameObject soundprefab;
@@ -142,12 +144,17 @@ public class NetworkManager : MonoBehaviour {
 			//canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
 //			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
 
+
 		} else {
 			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a hider!");
 			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
-			// only show the beginning UI if the hider has spawned
-//			hiderprefab.GetComponentInChildren<CanvasManager>().ShowStartUI();
+			// instantiate gameBeginScript
+			PhotonNetwork.Instantiate (gameBeginPrefab.name, spawnLocation, Quaternion.identity,0);
+
+
+//			// instantiate gameBeginScript
+//			PhotonNetwork.Instantiate (gameBeginPrefab.name, spawnLocation, Quaternion.identity,0);
 		};
 
 		Debug.Log ("Creating new player and spawn position is " + spawnLocation);

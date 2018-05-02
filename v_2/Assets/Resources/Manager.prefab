@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4543887803696092}
   - component: {fileID: 114099162702290470}
-  - component: {fileID: 82230916007873490}
   m_Layer: 0
   m_Name: Manager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,86 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82230916007873490
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1427507622816610}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 213898de1e6ad0d408de653e0228b411, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &114099162702290470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,14 +59,15 @@ MonoBehaviour:
     type: 2}
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}
-  officeAudio: {fileID: 8300000, guid: 213898de1e6ad0d408de653e0228b411, type: 3}
-  sourceAudio: {fileID: 82857941429198860, guid: 253ce69a108513844bb095ede135d52c,
-    type: 2}
   seekerprefab: {fileID: 1534776771268966, guid: 5eb4e451cdc77b44ba0742d69f31ca50,
     type: 2}
   hiderprefab: {fileID: 1002386173934084, guid: 9c3db032bbc0ccb4bb0d85ec7b6cf919,
     type: 2}
   canvasprefab: {fileID: 1468127540163312, guid: 2f4239199597d7c46aa55ab6fe53c8f2,
+    type: 2}
+  gameBeginPrefab: {fileID: 1578162778674962, guid: 35dba9f736641f24985521ced09793ef,
+    type: 2}
+  soundprefab: {fileID: 1869297552496632, guid: 732fed179cae31947b204ddedd4304f3,
     type: 2}
   spawnPoints: []
   spawnPointTaken: 
