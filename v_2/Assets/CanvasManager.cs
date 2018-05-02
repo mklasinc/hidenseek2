@@ -76,7 +76,8 @@ public class CanvasManager : Photon.MonoBehaviour {
 		Debug.Log ("hide start ui");
 		startUI.SetActive (false);
 		pointer.SetActive (true);
-
+		photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+		Debug.Log ("we have called the other");
 		if (photonView.isMine) {
 			Debug.Log ("call other!");
 			photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
