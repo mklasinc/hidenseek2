@@ -128,6 +128,10 @@ public class CanvasManager : Photon.MonoBehaviour {
 	}
 
 	public void EndGame(string w){
-		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
+		Debug.Log ("someone is saying that the game is over!");
+		if (gameOn) {
+			PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
+		}
+
 	}
 }

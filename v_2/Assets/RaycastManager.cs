@@ -33,7 +33,7 @@ public class RaycastManager : MonoBehaviour {
 //			if (tag == "Player" && hit.distance < end_game_raycast_distance) {
 			if (raycastOn && hit.collider.gameObject.name == "hsCubeHider(Clone)" && hit.distance < end_game_raycast_distance) {
 //				GameObject.Find ("TestCube").gameObject.GetComponent<TestCubeBehavior> ().NewRaycastHit ();
-				Debug.Log ("we hit the player game over!!!!");
+				Debug.Log ("we hit the player game over!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 				GameObject.FindGameObjectWithTag ("Canvas").GetComponent<CanvasManager> ().EndGame ("seeker");
 				raycastOn = false;
 			}
