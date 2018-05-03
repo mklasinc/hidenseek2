@@ -45,8 +45,10 @@ public class TimerManager : Photon.MonoBehaviour {
 		//game over logic
 		if (time_left == 0) {
 			Debug.Log ("game is over!");
-			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); // start timer
-			canvasManager.UpdateTimerUI("Game Over");
+			// disable timer
+			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); 
+			canvasManager.EndGame("hider");
+//			canvasManager.UpdateTimerUI("Game Over");
 		}
 
 	}

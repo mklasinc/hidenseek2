@@ -7,6 +7,7 @@ public class RaycastManager : MonoBehaviour {
 	public int raycastDistance;
 	public float end_game_raycast_distance;
 	public LayerMask layers;
+	bool raycastOn = true;
 
 	// Use this for initialization
 	void Start() {
@@ -25,14 +26,16 @@ public class RaycastManager : MonoBehaviour {
 
 		if (Physics.Raycast(transform.position, forward, out hit, raycastDistance, layers)) {
 			string tag = hit.collider.gameObject.tag;	
-			Debug.Log("weve got a hit! object that was hit: " + hit.collider.gameObject.name);
-			Debug.Log("the collision object has a tag: " + hit.collider.gameObject.tag);
+//			Debug.Log("weve got a hit! object that was hit: " + hit.collider.gameObject.name);
+//			Debug.Log("the collision object has a tag: " + hit.collider.gameObject.tag);
 
 			// game over
 //			if (tag == "Player" && hit.distance < end_game_raycast_distance) {
-			if (hit.collider.gameObject.name == "hsCube(Clone)" && hit.distance < end_game_raycast_distance) {
+			if (raycastOn && hit.collider.gameObject.name == "hsCube(Clone)" && hit.distance < end_game_raycast_distance) {
 //				GameObject.Find ("TestCube").gameObject.GetComponent<TestCubeBehavior> ().NewRaycastHit ();
 				Debug.Log ("we hit the player game over!!!!");
+				GameObject.FindGameObjectWithTag ("Canvas").GetComponent<CanvasManager> ().EndGame ("seeker");
+				raycastOn = false;
 			}
 		}
 	}

@@ -103,12 +103,31 @@ public class CanvasManager : Photon.MonoBehaviour {
 //		};
 	}
 
-	[PunRPC] public void ShowEndUI(){
-		startUI.SetActive (false);
+	// END GAME UI
+
+	[PunRPC] public void ShowEndUI(string winner){
+		// find the hider and the seeker
+		GameObject h = GameObject.Find("Hider(Clone)");
+		GameObject s = GameObject.Find("Seeker(Clone)");
+
+		// hide timer ui and show end ui
+		timerUI.SetActive (false);
 		endUI.SetActive (true);
 
-		if (photonView.isMine) {
-			photonView.RPC("ShowEndUI", PhotonTargets.OthersBuffered,photonView.viewID);
+		// ui text dipsplay logic
+		if (winner == "seeker") {
+			//reset timer on all players
+			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false);
+			endUI.GetComponentInChildren<Text> ().text = "seeker won!";
+		} else if (winner == "hider") {
+			endUI.GetComponentInChildren<Text> ().text = "hider won!";
+		} else {
+			
 		}
+			
+	}
+
+	public void EndGame(string w){
+		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
 	}
 }
