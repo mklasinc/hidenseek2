@@ -40,9 +40,9 @@ public class CanvasManager : Photon.MonoBehaviour {
 		startUI.SetActive (true);
 		// show the right text
 		Debug.Log ("look for finder and seeker");
-		GameObject h = GameObject.Find("Hider(Clone");
+		GameObject h = GameObject.Find("Hider(Clone)");
 		Debug.Log (h);
-		GameObject s = GameObject.Find("Seeker(Clone");
+		GameObject s = GameObject.Find("Seeker(Clone)");
 		Debug.Log (h);
 		string m = "empty string";
 		if (h != null) {

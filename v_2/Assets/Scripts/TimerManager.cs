@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon;
 
-public class TimerManager : MonoBehaviour {
+public class TimerManager : Photon.MonoBehaviour {
 
 	public float game_max_duration;
 	float start_time;
@@ -19,8 +20,9 @@ public class TimerManager : MonoBehaviour {
 	void Start () {
 		time_left = game_max_duration; // set initial timer value
 		start_time = StartTimer ();
-		SetGameStatus (true);
-		Debug.Log ("timer has been instantiated!");
+		Debug.Log ("start timer!");
+		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, true); // start timer
+//		Debug.Log ("timer has been instantiated!");
 //		timer_text = canvas.GetComponent<Text> ();
 	}
 	
@@ -43,7 +45,7 @@ public class TimerManager : MonoBehaviour {
 		//game over logic
 		if (time_left == 0) {
 			Debug.Log ("game is over!");
-			SetGameStatus (false);
+			SetGameStatus (false); // end timer
 			timer_text.text = "Game Over";
 		}
 
@@ -57,7 +59,8 @@ public class TimerManager : MonoBehaviour {
 		return game_status;
 	}
 
-	void SetGameStatus(bool b){
+	[PunRPC] void SetGameStatus(bool b){
+		Debug.Log ("game status has been change to:" + b);
 		game_status = b;
 	}
 
