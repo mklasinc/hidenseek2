@@ -55,10 +55,10 @@ public class CanvasManager : Photon.MonoBehaviour {
 		// activate the teleportation pointer
 		pointer.SetActive (false);
 
-		if (photonView.isMine) {
-//			StartCoroutine(WaitBeforeHidingStartUI(10));
-			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
-		}
+//		if (photonView.isMine) {
+////			StartCoroutine(WaitBeforeHidingStartUI(10));
+//			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
+//		}
 	}
 
 	[PunRPC] public void PlayerReady(bool b){
