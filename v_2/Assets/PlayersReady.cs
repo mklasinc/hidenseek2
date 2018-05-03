@@ -27,15 +27,15 @@ public class PlayersReady : Photon.MonoBehaviour {
 			Debug.Log ("one player is ready!");
 			countOfPlayersReady++;
 			Debug.Log ("personal count of players ready is" + countOfPlayersReady);
-//			PhotonView.Get(this).RPC("UpdatePlayerReadCounter", PhotonTargets.MasterClient, 1);
-			PhotonView.Get(this).RPC("UpdatePlayerReadCounter", PhotonTargets.AllBuffered, countOfPlayersReady);
+			PhotonView.Get(this).RPC("UpdatePlayerReadCounter", PhotonTargets.MasterClient, 1);
+//			PhotonView.Get(this).RPC("UpdatePlayerReadCounter", PhotonTargets.AllBuffered, countOfPlayersReady);
 		}
 	}
 
 	[PunRPC] public void UpdatePlayerReadCounter(int n){
 		Debug.Log ("update player counter is called!");
 //		Debug.Log ("call is mine?" + photonView.isMine);
-//		countOfPlayersReady++;
+		countOfPlayersReady++;
 		countOfPlayersReady = n;
 		Debug.Log ("global count of players ready is" + countOfPlayersReady);
 
