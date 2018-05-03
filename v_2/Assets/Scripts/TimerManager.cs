@@ -10,14 +10,14 @@ public class TimerManager : Photon.MonoBehaviour {
 	float start_time;
 	bool game_status;
 //	public GameObject canvas;
-//	GameObject canvas
-	Text timer_text;
+	CanvasManager canvasManager;
 
 	//timer time left
 	float time_left;
 
 	// Use this for initialization
 	void Start () {
+		canvasManager = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<CanvasManager> ();
 		time_left = game_max_duration; // set initial timer value
 		start_time = StartTimer ();
 		Debug.Log ("start timer!");
@@ -41,12 +41,12 @@ public class TimerManager : Photon.MonoBehaviour {
 		float time_elapsed = Mathf.Floor(Time.time - start_time);
 		time_left = game_max_duration - time_elapsed;
 		Debug.Log ("time left is:" + time_left);
-		timer_text.text = time_left.ToString();
+		canvasManager.UpdateTimerUI(time_left.ToString());
 		//game over logic
 		if (time_left == 0) {
 			Debug.Log ("game is over!");
-			SetGameStatus (false); // end timer
-			timer_text.text = "Game Over";
+			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); // start timer
+			canvasManager.UpdateTimerUI("Game Over");
 		}
 
 	}

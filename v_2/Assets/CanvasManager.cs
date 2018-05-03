@@ -86,7 +86,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 				photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 			};
 			Debug.Log ("activate timer UI!");
-			timerUI.SetActive (false);
+			timerUI.SetActive (true);
 			GameObject.FindGameObjectWithTag ("Manager").GetComponent<NetworkManager> ().StartGameTimer ();
 //			ShowTimerUI ();
 			gameOn = true;
@@ -95,8 +95,8 @@ public class CanvasManager : Photon.MonoBehaviour {
 //		StartGame ();
 	}
 
-	[PunRPC] public void ShowTimerUI(int n){
-		timerUI.SetActive (false);
+	public void UpdateTimerUI(string m){
+		timerUI.GetComponentInChildren<Text> ().text = m;
 //		if (photonView.isMine) {
 //			Debug.Log ("call other!");
 //			photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
