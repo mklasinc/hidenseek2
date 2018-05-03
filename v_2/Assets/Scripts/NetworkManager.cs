@@ -154,7 +154,7 @@ public class NetworkManager : MonoBehaviour {
 		} else {
 			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
 			Debug.Log ("spawning a hider!");
-			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
+//			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
 			// instantiate gameBeginScript
 			PhotonNetwork.Instantiate (gameBeginPrefab.name, spawnLocation, Quaternion.identity,0);
 

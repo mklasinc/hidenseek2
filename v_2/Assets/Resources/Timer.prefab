@@ -63,8 +63,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114537092631095056}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114537092631095056
@@ -78,4 +78,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f6a8a3da3484c84a64641a6a34b6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game_max_duration: 20
+  game_max_duration: 100
