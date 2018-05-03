@@ -184,7 +184,7 @@ public class NetworkManager : MonoBehaviour {
 	// Helper function to find the rig
 	IEnumerator WaitForRig(){
 
-		Debug.Log(PhotonNetwork.countOfPlayers);
+		Debug.Log("player count is!!!!!!" + PhotonNetwork.countOfPlayers);
 
 		yield return new WaitForSeconds (1);
 

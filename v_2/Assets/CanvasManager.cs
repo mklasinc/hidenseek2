@@ -117,7 +117,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 		// ui text dipsplay logic
 		if (winner == "seeker") {
 			//reset timer on all players
-//			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false);
+			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false);
 			endUI.GetComponentInChildren<Text> ().text = "seeker won!";
 		} else if (winner == "hider") {
 			endUI.GetComponentInChildren<Text> ().text = "hider won!";
