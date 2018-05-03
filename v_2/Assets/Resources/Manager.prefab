@@ -55,6 +55,8 @@ MonoBehaviour:
     type: 2}
   headsetcubeprefab: {fileID: 1882753203465834, guid: f5bb07664c528ac42966c45deaa78580,
     type: 2}
+  headsethiderprefab: {fileID: 1293844007881136, guid: eb495da57e09c6147bc4ffbd6b9dd8f1,
+    type: 2}
   capsulehand: {fileID: 1147653991657544, guid: 852f5cfe0e0c07f459bead80ba2ceece,
     type: 2}
   spawnPoint1: {fileID: 1243993174257658, guid: 7697ce9795e4b4ba189fe347dc083f36,
@@ -73,6 +75,8 @@ MonoBehaviour:
     type: 2}
   timerprefab: {fileID: 1571916912875964, guid: a377fd5a81b164669bf692fe638c2114,
     type: 2}
-  printer: {fileID: 0}
-  spawnPoints: []
-  spawnPointTaken: 
+  printer: {fileID: 1517382763408158, guid: ea6ce5ea9826e304e807b709124cebc8, type: 2}
+  spawnPoints:
+  - {fileID: 4638643022593948, guid: 7697ce9795e4b4ba189fe347dc083f36, type: 2}
+  - {fileID: 4557335054813326, guid: fa61d3294ee5d44fa9c7c26b926589c3, type: 2}
+  spawnPointTaken: 0100

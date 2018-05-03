@@ -192,9 +192,9 @@ public class NetworkManager : MonoBehaviour {
 		GameObject headset = GameObject.Find ("Camera (eye)");
 		GameObject photonCube;
 		if (PhotonNetwork.countOfPlayers > 1) {
-			photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
-		} else {
 			photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+		} else {
+			photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
 		};
 
 
