@@ -35,13 +35,16 @@ public class CanvasManager : Photon.MonoBehaviour {
 	// show start ui
 
 	[PunRPC] public void ShowStartUI(int n){
-		Debug.Log ("we are called!");
+		Debug.Log ("show start ui!");
 		// activate the start ui
 		startUI.SetActive (true);
 		// show the right text
+		Debug.Log ("look for finder and seeker");
 		GameObject h = GameObject.Find("Hider(Clone");
+		Debug.Log (h);
 		GameObject s = GameObject.Find("Seeker(Clone");
-		string m = "";
+		Debug.Log (h);
+		string m = "empty string";
 		if (h != null) {
 			m = "you are a hider!";
 		} else if (s != null) {
