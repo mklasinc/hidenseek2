@@ -23,12 +23,12 @@ public class CanvasManager : Photon.MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (photonView.isMine) {
-			if (Input.GetKeyDown (KeyCode.Space)) {
-				Debug.Log ("switch to end UI");
-				ShowEndUI ();
-			}
-		}
+//		if (photonView.isMine) {
+//			if (Input.GetKeyDown (KeyCode.Space)) {
+//				Debug.Log ("switch to end UI");
+//				ShowEndUI ();
+//			}
+//		}
 		
 	}
 

@@ -16,7 +16,7 @@ public class InputRight : Photon.MonoBehaviour {
 	GameObject gameBeginManager;
 
 	// player ready variable
-	bool playerIsReady = false;
+	public bool playerIsReady = false;
 
 	void Start(){
 	}
