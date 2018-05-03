@@ -14,6 +14,7 @@ public class NetworkManager : MonoBehaviour {
 	//Prefabs for the player, the cube to represent the HTC headset, and the capsule to represent the HTC controllers
 	public GameObject playerprefab;
 	public GameObject headsetcubeprefab;
+	public GameObject headsethiderprefab;
 	public GameObject capsulehand;
 	public GameObject spawnPoint1;
 	public GameObject spawnPoint2;
@@ -189,7 +190,12 @@ public class NetworkManager : MonoBehaviour {
 
 		//Find headset and instaniate cube ON NETWORK -- set headset as cube's parent
 		GameObject headset = GameObject.Find ("Camera (eye)");
-		GameObject photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+		if (PhotonNetwork.countOfPlayers > 1) {
+			GameObject photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
+		} else {
+			GameObject photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+		}
+
 
 		photonCube.transform.SetParent (headset.transform);
 
