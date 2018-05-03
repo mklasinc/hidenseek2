@@ -190,11 +190,12 @@ public class NetworkManager : MonoBehaviour {
 
 		//Find headset and instaniate cube ON NETWORK -- set headset as cube's parent
 		GameObject headset = GameObject.Find ("Camera (eye)");
+		GameObject photonCube;
 		if (PhotonNetwork.countOfPlayers > 1) {
-			GameObject photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
+			photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
 		} else {
-			GameObject photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
-		}
+			photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+		};
 
 
 		photonCube.transform.SetParent (headset.transform);
