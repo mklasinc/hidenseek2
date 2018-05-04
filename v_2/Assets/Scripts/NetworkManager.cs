@@ -146,7 +146,8 @@ public class NetworkManager : MonoBehaviour {
 		// instantiate a hider or a seeker
 		// if no one is in the room seeker is spawned - else hider is spawn
 		if (PhotonNetwork.playerList.Length == 1) {
-			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
+//			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
+			GameObject.Instantiate (seekerprefab, spawnPoint1.transform.position, Quaternion.identity);
 			Debug.Log ("spawning a seeker!");
 			//canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
 //			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
@@ -154,6 +155,7 @@ public class NetworkManager : MonoBehaviour {
 
 		} else {
 			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
+			GameObject.Instantiate (hiderprefab, spawnPoint2.transform.position, Quaternion.identity);
 			Debug.Log ("spawning a hider!");
 //			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
 			// instantiate gameBeginScript
@@ -204,24 +206,24 @@ public class NetworkManager : MonoBehaviour {
 		//Find the controllers and instantiate capsules ON NETOWRK -- set controllers as the parents of the capsules
        
         //Find left controller
-		GameObject controllerLeft = GameObject.Find ("Controller (left)/Model");
-		Debug.Log (controllerLeft);
-		GameObject capsuleHandLeft = PhotonNetwork.Instantiate(capsulehand.name, controllerLeft.transform.position, Quaternion.identity, 0);
-
-		capsuleHandLeft.transform.SetParent (controllerLeft.transform);
-
-		//Now for right controller
-
-		GameObject controllerRight = GameObject.Find("Controller (right)/Model");
-		GameObject capsuleHandRight = PhotonNetwork.Instantiate(capsulehand.name, controllerRight.transform.position, Quaternion.identity, 0);
-		capsuleHandRight.transform.SetParent (controllerRight.transform);
+//		GameObject controllerLeft = GameObject.Find ("Controller (left)/Model");
+//		Debug.Log (controllerLeft);
+//		GameObject capsuleHandLeft = PhotonNetwork.Instantiate(capsulehand.name, controllerLeft.transform.position, Quaternion.identity, 0);
+//
+//		capsuleHandLeft.transform.SetParent (controllerLeft.transform);
+//
+//		//Now for right controller
+//
+//		GameObject controllerRight = GameObject.Find("Controller (right)/Model");
+//		GameObject capsuleHandRight = PhotonNetwork.Instantiate(capsulehand.name, controllerRight.transform.position, Quaternion.identity, 0);
+//		capsuleHandRight.transform.SetParent (controllerRight.transform);
 
 		// if we spawn a hider make the size of the body parts smaller
-		if (PhotonNetwork.countOfPlayers > 1) {
-			photonCube.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
-			capsuleHandRight.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
-			capsuleHandLeft.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
-		}
+//		if (PhotonNetwork.countOfPlayers > 1) {
+//			photonCube.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+//			capsuleHandRight.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+//			capsuleHandLeft.transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+//		}
 
 	}
 
