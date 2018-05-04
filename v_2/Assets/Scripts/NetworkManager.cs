@@ -154,7 +154,7 @@ public class NetworkManager : MonoBehaviour {
 
 
 		} else {
-			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
+//			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);
 			GameObject.Instantiate (hiderprefab, spawnPoint2.transform.position, Quaternion.identity);
 			Debug.Log ("spawning a hider!");
 //			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
@@ -193,13 +193,13 @@ public class NetworkManager : MonoBehaviour {
 		//Find headset and instaniate cube ON NETWORK -- set headset as cube's parent
 		GameObject headset = GameObject.Find ("Camera (eye)");
 		GameObject photonCube;
-//		if (PhotonNetwork.countOfPlayers > 1) {
-//			photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
-//		} else {
-//			photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
-//		};
+		if (PhotonNetwork.countOfPlayers > 1) {
+			photonCube = PhotonNetwork.Instantiate(headsethiderprefab.name, headset.transform.position, Quaternion.identity, 0);
+		} else {
+			photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+		};
 //
-		photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
+//		photonCube = PhotonNetwork.Instantiate(headsetcubeprefab.name, headset.transform.position, Quaternion.identity, 0);
 		photonCube.transform.SetParent (headset.transform);
 
 
