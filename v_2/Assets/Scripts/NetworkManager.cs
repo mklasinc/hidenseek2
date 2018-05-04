@@ -25,6 +25,7 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject hiderprefab;
 	// canvas prefab
 	public GameObject canvasprefab;
+	public GameObject soundeffectsprefab;
 	// game begin logic
 	public GameObject gameBeginPrefab;
 
@@ -146,12 +147,9 @@ public class NetworkManager : MonoBehaviour {
 		// instantiate a hider or a seeker
 		// if no one is in the room seeker is spawned - else hider is spawn
 		if (PhotonNetwork.playerList.Length == 1) {
-//			GameObject.Instantiate (seekerprefab, spawnLocation, Quaternion.identity);
 			GameObject.Instantiate (seekerprefab, spawnPoint1.transform.position, Quaternion.identity);
 			Debug.Log ("spawning a seeker!");
-			//canvasprefab.GetComponent<CanvasManager>().ShowStartUI(1);
-//			PhotonNetwork.Instantiate (canvasprefab.name, spawnLocation, Quaternion.identity,0);
-
+			PhotonNetwork.Instantiate (soundeffectsprefab.name, Vector3.zero, Quaternion.identity,0);
 
 		} else {
 //			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);

@@ -69,6 +69,8 @@ MonoBehaviour:
     type: 2}
   canvasprefab: {fileID: 1468127540163312, guid: 2f4239199597d7c46aa55ab6fe53c8f2,
     type: 2}
+  soundeffectsprefab: {fileID: 1284997679681972, guid: 9e31075ed5dea484491b2f45807fe0a7,
+    type: 2}
   gameBeginPrefab: {fileID: 1578162778674962, guid: 35dba9f736641f24985521ced09793ef,
     type: 2}
   soundprefab: {fileID: 1869297552496632, guid: 732fed179cae31947b204ddedd4304f3,

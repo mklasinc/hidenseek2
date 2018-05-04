@@ -48,7 +48,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 		if (h != null) {
 			m = "you are a hider!";
 		} else if (s != null) {
-			m = "you are a seeker!";
+			m = "Oh no! \nYou brought your mischevious daughter to work, but she escaped the kids' room during lunch break. Make sure to seek her out before your boss gets mad at you";
 		};
 		startUI.GetComponentInChildren<Text>().text = m;
 
@@ -56,7 +56,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 		pointer.SetActive (false);
 
 //		if (photonView.isMine) {
-////			StartCoroutine(WaitBeforeHidingStartUI(10));
+//			StartCoroutine(WaitBeforeHidingStartUI(10));
 //			photonView.RPC("ShowStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 //		}
 	}

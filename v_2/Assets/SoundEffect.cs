@@ -5,6 +5,8 @@ using UnityEngine;
 public class SoundEffect : MonoBehaviour {
 
 
+
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (DestroyObject (GetComponent<AudioSource> ().clip.length));
@@ -19,4 +21,6 @@ public class SoundEffect : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 }
