@@ -40,7 +40,7 @@ public class TimerManager : Photon.MonoBehaviour {
 	void UpdateTimer(){
 		float time_elapsed = Mathf.Floor(Time.time - start_time);
 		time_left = game_max_duration - time_elapsed;
-		Debug.Log ("time left is:" + time_left);
+//		Debug.Log ("time left is:" + time_left);
 		canvasManager.UpdateTimerUI(time_left.ToString());
 		//game over logic
 		if (time_left == 0) {

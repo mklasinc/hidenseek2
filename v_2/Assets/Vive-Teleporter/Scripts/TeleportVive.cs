@@ -161,6 +161,7 @@ public class TeleportVive : MonoBehaviour {
         // If we are currently teleporting (ie handling the fade in/out transition)...
         if(CurrentTeleportState == TeleportState.Teleporting)
         {
+			
             // Wait until half of the teleport time has passed before the next event (note: both the switch from fade
             // out to fade in and the switch from fade in to stop the animation is half of the fade duration)
             if(Time.time - TeleportTimeMarker >= TeleportFadeDuration / 2)
@@ -175,6 +176,7 @@ public class TeleportVive : MonoBehaviour {
                     Vector3 offset = OriginTransform.position - HeadTransform.position;
                     offset.y = 0;
                     OriginTransform.position = Pointer.SelectedPoint + offset;
+					Debug.Log ("we are teleporting!"); // here is where we call a function somewhere else
                 }
 
                 TeleportTimeMarker = Time.time;
