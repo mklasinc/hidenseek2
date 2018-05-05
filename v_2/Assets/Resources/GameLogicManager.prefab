@@ -63,8 +63,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114508047840559808}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114508047840559808
@@ -75,8 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808644638839048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1a3cc8a8166cf42a1ce68da9766b34, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b92e7eb6c10414cb15331bb73dc2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerprefab: {fileID: 1571916912875964, guid: a377fd5a81b164669bf692fe638c2114,
-    type: 2}
+  timerprefab: {fileID: 0}
