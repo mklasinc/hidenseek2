@@ -120,7 +120,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 			
 	}
 
-	public void GameEnd(string w){
+	[PunRPC] public void GameEnd(string w){
 		Debug.Log ("someone is saying that the game is over!");
 		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
 //		if (gameOn) {
