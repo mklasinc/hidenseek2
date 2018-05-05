@@ -54,14 +54,14 @@ public class GameLogicManager : Photon.MonoBehaviour {
 			if (seeker != null) {
 				// seeker plays winning sound
 				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("winner",Vector3.zero);
-			} else {
+			} else if(hider != null){
 				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("loser",Vector3.zero);
 			}
 		} else if (winner == "hider") {
 			if (seeker != null) {
 				// seeker plays winning sound
 				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("loser",Vector3.zero);
-			} else {
+			} else if(hider != null){
 				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("winner",Vector3.zero);
 			}
 			
