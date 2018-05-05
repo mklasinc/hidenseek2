@@ -18,7 +18,8 @@ public class PlayersReady : Photon.MonoBehaviour {
 //			GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 //			canvas.GetComponent<PhotonView> ().RequestOwnership ();
 //			canvas.GetComponent<CanvasManager> ().HideStartUI (1);
-			PhotonView.Get(this).RPC("GameStart", PhotonTargets.AllBuffered, 1);
+//			PhotonView.Get(this).RPC("GameStart", PhotonTargets.AllBuffered, 1);
+			GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameLogicManager>().GameStart(1);
 			Destroy(this.gameObject);
 		}
 	}
