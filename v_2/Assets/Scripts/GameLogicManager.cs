@@ -42,10 +42,29 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 		canvas.GetComponent<CanvasManager> ().GameEnd (winner);
 
+		GameObject seeker = GameObject.Find ("Seeker(Clone)");
+		GameObject hider = GameObject.Find ("Hider(Clone)");
+		GameObject sEffectManager = GameObject.FindGameObjectWithTag("SoundEffects");
+
+
+
 		// reset timer
-		if(winner == "seeker"){
-//			PhotonView.Get(this).RPC("ResetTimer", PhotonTargets.AllBuffered, 1); // game is over
-			timer.GetComponent<TimerManager>().SeekerWon();
+		if (winner == "seeker") {
+			timer.GetComponent<TimerManager> ().SeekerWon (); // reset timer
+			if (seeker != null) {
+				// seeker plays winning sound
+				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("winner",Vector3.zero);
+			} else {
+				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("loser",Vector3.zero);
+			}
+		} else if (winner == "hider") {
+			if (seeker != null) {
+				// seeker plays winning sound
+				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("loser",Vector3.zero);
+			} else {
+				sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("winner",Vector3.zero);
+			}
+			
 		}
 
 	}

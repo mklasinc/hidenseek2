@@ -25,8 +25,13 @@ public class SoundEffectsManager : Photon.MonoBehaviour {
 		if (sEffect == "footsteps") {
 			Debug.Log ("instantiate footsteps");
 			GameObject effect;
-			PhotonNetwork.Instantiate(footstepSound.name, pos, Quaternion.identity, 0);
-		}; 
+			PhotonNetwork.Instantiate (footstepSound.name, pos, Quaternion.identity, 0);
+		} else if (sEffect == "winner") {
+			GameObject.Instantiate (winnerSound, Vector3.zero, Quaternion.identity);
+		
+		} else if (sEffect == "loser") {
+			GameObject.Instantiate (loserSound, Vector3.zero, Quaternion.identity);
+		} 
 
 	}
 }
