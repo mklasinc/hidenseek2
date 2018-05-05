@@ -14,10 +14,11 @@ public class PlayersReady : Photon.MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (countOfPlayersReady >= 2) {
-			Debug.Log ("start the game!!!!");
-			GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
+			Debug.Log ("both players are ready!!!!");
+//			GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 //			canvas.GetComponent<PhotonView> ().RequestOwnership ();
-			canvas.GetComponent<CanvasManager> ().HideStartUI (1);
+//			canvas.GetComponent<CanvasManager> ().HideStartUI (1);
+			PhotonView.Get(this).RPC("GameStart", PhotonTargets.AllBuffered, 1);
 			Destroy(this.gameObject);
 		}
 	}
@@ -26,18 +27,18 @@ public class PlayersReady : Photon.MonoBehaviour {
 		if (b == true) {
 			Debug.Log ("one player is ready!");
 //			countOfPlayersReady++;
-			Debug.Log ("personal count of players ready is" + countOfPlayersReady);
+//			Debug.Log ("personal count of players ready is" + countOfPlayersReady);
 			PhotonView.Get(this).RPC("UpdatePlayerReadCounter", PhotonTargets.MasterClient, 1);
 //			PhotonView.Get(this).RPC("UpdatePlayerReadCounter", PhotonTargets.AllBuffered, countOfPlayersReady);
 		}
 	}
 
 	[PunRPC] public void UpdatePlayerReadCounter(int n){
-		Debug.Log ("update player counter is called!");
+//		Debug.Log ("update player counter is called!");
 //		Debug.Log ("call is mine?" + photonView.isMine);
 		countOfPlayersReady++;
 //		countOfPlayersReady = n;
-		Debug.Log ("global count of players ready is" + countOfPlayersReady);
+//		Debug.Log ("global count of players ready is" + countOfPlayersReady);
 
 //		if (photonView.isMine) {
 //			photonView.RPC ("UpdatePlayerReadCounter", PhotonTargets.OthersBuffered, n);

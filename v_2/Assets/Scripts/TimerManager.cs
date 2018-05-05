@@ -8,63 +8,76 @@ public class TimerManager : Photon.MonoBehaviour {
 
 	public float game_max_duration;
 	float start_time;
-	bool game_status;
-//	public GameObject canvas;
-	CanvasManager canvasManager;
+	bool timer_has_started = false;
+	GameObject canvas;
+	GameObject gameManager;
 
 	//timer time left
 	float time_left;
 
 	// Use this for initialization
 	void Start () {
-		canvasManager = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<CanvasManager> ();
-		time_left = game_max_duration; // set initial timer value
-		start_time = StartTimer ();
 		Debug.Log ("start timer!");
-		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, true); // start timer
-//		Debug.Log ("timer has been instantiated!");
-//		timer_text = canvas.GetComponent<Text> ();
+		canvas = GameObject.FindGameObjectWithTag ("Canvas"); // find canvas
+		gameManager = GameObject.FindGameObjectWithTag ("GameManager"); // find game manager
+		time_left = game_max_duration; // set initial timer value
+		start_time = SetStartTime (); // set timer's start time
+
+		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, true); // set game status to true
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameOn()) {
+		// if game is on then update the timer
+		bool gameOn = gameManager.GetComponent<GameLogicManager> ().IsGameOn ();
+		if (gameOn && !timer_has_started) {
+			// start the timer
+			timer_has_started = true;
+		} else if (gameOn && timer_has_started) {
+			//update timer
 			UpdateTimer ();
+		} else if (!gameOn && timer_has_started) {
+			// reset timer
+			PhotonView.Get(this).RPC("ResetTimer", PhotonTargets.AllBuffered, 1); // game is over
 		}
 	}
 
-	float StartTimer(){
+	float SetStartTime(){
 		return Time.time;
 	}
 
 	void UpdateTimer(){
-		float time_elapsed = Mathf.Floor(Time.time - start_time);
+		// do some time math
+		float time_elapsed = Mathf.Floor(Time.time - start_time); //
 		time_left = game_max_duration - time_elapsed;
-//		Debug.Log ("time left is:" + time_left);
-		canvasManager.UpdateTimerUI(time_left.ToString());
+		canvas.GetComponent<CanvasManager>().UpdateTimerUI(time_left.ToString());
 		//game over logic
 		if (time_left == 0) {
 			Debug.Log ("game is over!");
-			// disable timer
-			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); 
-			canvasManager.EndGame("hider");
+			gameManager.GetComponent<GameLogicManager> ().GameEnd ("hider");
+//			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); // game is over
+//			canvas.GetComponent<CanvasManager>().EndGame("hider");
 //			canvasManager.UpdateTimerUI("Game Over");
 		}
 
 	}
 
-	public float GetTimerValue(){
+	[PunRPC] public void ResetTimer(int n){
+		time_left = game_max_duration;
+	}
+
+	float GetTimerValue(){
 		return time_left;
 	}
 
-	bool GameOn(){
-		return game_status;
-	}
+//	bool GameOn(){
+//		return game_status;
+//	}
 
-	[PunRPC] void SetGameStatus(bool b){
-		Debug.Log ("game status has been change to:" + b);
-		game_status = b;
-	}
+//	[PunRPC] void SetGameStatus(bool b){
+//		Debug.Log ("game status has been change to:" + b);
+//		game_status = b;
+//	}
 
 
 

@@ -6,6 +6,8 @@ using Photon;
 public class SoundEffectsManager : Photon.MonoBehaviour {
 
 	public GameObject footstepSound;
+	public GameObject winnerSound;
+	public GameObject loserSound;
 	public GameObject spawnP;
 
 	// Use this for initialization

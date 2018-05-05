@@ -255,10 +255,10 @@ public class NetworkManager : MonoBehaviour {
 		}
 	}
 
-	public void StartGameTimer(){
-		Debug.Log ("will try to instantiate a timer!");
-		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);
-	}
+//	public void StartGameTimer(){
+//		Debug.Log ("will try to instantiate a timer!");
+//		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);
+//	}
 
 
 
