@@ -179,6 +179,7 @@ public class TeleportVive : MonoBehaviour {
 					Debug.Log ("we are teleporting!"); // here is where we call a function somewhere else
 					GameObject sEffectManager = GameObject.FindGameObjectWithTag("SoundEffects");
 					if (sEffectManager != null) {
+						Debug.Log ("calling sound manager!");
 						sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("footsteps",OriginTransform.position);
 					}
 
