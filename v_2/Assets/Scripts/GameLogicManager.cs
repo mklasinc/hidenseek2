@@ -36,12 +36,16 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 	[PunRPC] public void GameEnd(string winner){
 		Debug.Log ("game ended, winner is:" + winner);
-		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); // set game status to game over
-		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, winner); // game is over
+		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, 0); // set game status to game over
+//		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, winner); // game is over
+		GameObject timer = GameObject.FindGameObjectWithTag ("Timer");
+		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
+		canvas.GetComponent<CanvasManager> ().GameEnd (winner);
 
 		// reset timer
 		if(winner == "seeker"){
-			PhotonView.Get(this).RPC("ResetTimer", PhotonTargets.AllBuffered, 1); // game is over
+//			PhotonView.Get(this).RPC("ResetTimer", PhotonTargets.AllBuffered, 1); // game is over
+			timer.GetComponent<TimerManager>().SeekerWon();
 		}
 
 	}

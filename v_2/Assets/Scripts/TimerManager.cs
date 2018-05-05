@@ -70,6 +70,9 @@ public class TimerManager : Photon.MonoBehaviour {
 		return time_left;
 	}
 
+	public void SeekerWon(){
+		PhotonView.Get(this).RPC("ResetTimer", PhotonTargets.AllBuffered, 1);	
+	}
 //	bool GameOn(){
 //		return game_status;
 //	}
