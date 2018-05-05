@@ -60,4 +60,5 @@ MonoBehaviour:
   - GameEnd
   - GameStart
   - ResetTimer
+  - PlayEndGameSound
   DisableAutoOpenWizard: 1
