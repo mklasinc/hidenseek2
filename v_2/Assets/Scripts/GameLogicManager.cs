@@ -29,7 +29,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		Debug.Log("will try to instantiate a timer object!");
 		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);
 		//update game status
-		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, 0); // set game status to game over
+		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, 1); // set game status to game over
 //		SetGameStatus(true);
 	}
 		

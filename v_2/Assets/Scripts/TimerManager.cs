@@ -23,7 +23,7 @@ public class TimerManager : Photon.MonoBehaviour {
 		time_left = game_max_duration; // set initial timer value
 		start_time = SetStartTime (); // set timer's start time
 
-		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, true); // set game status to true
+//		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, true); // set game status to true
 	}
 	
 	// Update is called once per frame
