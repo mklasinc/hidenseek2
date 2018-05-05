@@ -12,6 +12,7 @@ TagManager:
   - Manager
   - GameBegin
   - Timer
+  - SoundEffects
   layers:
   - Default
   - TransparentFX
