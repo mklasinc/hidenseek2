@@ -29,7 +29,8 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		Debug.Log("will try to instantiate a timer object!");
 		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);
 		//update game status
-		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, true); // set game status to game over
+		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, 0); // set game status to game over
+//		SetGameStatus(true);
 	}
 		
 
@@ -45,9 +46,14 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 	}
 
-	[PunRPC] public void SetGameStatus(bool b){
-		Debug.Log ("game status has been change to:" + b);
-		game_status = b;
+	[PunRPC] public void SetGameStatus(int n){
+		Debug.Log ("game status has been change to:" + n);
+		if (n == 0) {
+			game_status = false;
+		} else {
+			game_status = true;
+		}
+//		game_status = b;
 	}
 
 	public bool IsGameOn(){
