@@ -177,7 +177,12 @@ public class TeleportVive : MonoBehaviour {
                     offset.y = 0;
                     OriginTransform.position = Pointer.SelectedPoint + offset;
 					Debug.Log ("we are teleporting!"); // here is where we call a function somewhere else
-					GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffectsManager>().InstantiateFootsteps("footsteps",OriginTransform.position);
+					GameObject sEffectManager = GameObject.FindGameObjectWithTag("SoundEffects");
+					if (sEffectManager != null) {
+						sEffectManager.GetComponent<SoundEffectsManager>().InstantiateFootsteps("footsteps",OriginTransform.position);
+					}
+
+						
                 }
 
                 TeleportTimeMarker = Time.time;
