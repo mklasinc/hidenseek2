@@ -149,7 +149,7 @@ public class NetworkManager : MonoBehaviour {
 		if (PhotonNetwork.playerList.Length == 1) {
 			GameObject.Instantiate (seekerprefab, spawnPoint1.transform.position, Quaternion.identity);
 			Debug.Log ("spawning a seeker!");
-			PhotonNetwork.Instantiate (soundeffectsprefab.name, Vector3.zero, Quaternion.identity,0);
+//			PhotonNetwork.Instantiate (soundeffectsprefab.name, Vector3.zero, Quaternion.identity,0);
 
 		} else {
 //			GameObject.Instantiate (hiderprefab, spawnLocation, Quaternion.identity);

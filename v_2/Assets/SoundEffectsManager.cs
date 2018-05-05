@@ -11,7 +11,7 @@ public class SoundEffectsManager : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		InstantiateFootsteps ("footsteps", spawnP.transform.position); // seeker
+//		InstantiateFootsteps ("footsteps", spawnP.transform.position); // seeker
 	}
 	
 	// Update is called once per frame
