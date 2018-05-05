@@ -24,7 +24,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 		//hide start ui
 		canvas.GetComponent<CanvasManager>().HideStartUI(1);
-		PhotonView.Get(this).RPC("HideStartUI", PhotonTargets.AllBuffered,photonView.viewID);
+//		PhotonView.Get(this).RPC("HideStartUI", PhotonTargets.AllBuffered,photonView.viewID);
 		//start timer
 		Debug.Log("will try to instantiate a timer object!");
 		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);

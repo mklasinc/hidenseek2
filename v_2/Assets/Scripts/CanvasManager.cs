@@ -79,7 +79,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 			Debug.Log ("hide start ui");
 			startUI.SetActive (false);
 			pointer.SetActive (true);
-//			photonView.RPC("HideStartUI", PhotonTargets.AllBuffered,photonView.viewID);
+			photonView.RPC("HideStartUI", PhotonTargets.OthersBuffered,photonView.viewID);
 			Debug.Log ("activate timer UI!");
 			timerUI.SetActive (true);
 //			GameObject.FindGameObjectWithTag ("Manager").GetComponent<NetworkManager> ().StartGameTimer ();
