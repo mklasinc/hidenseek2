@@ -36,3 +36,5 @@ sysinfo.txt
 *.unitypackage
 *.meta
 *.meta
+*.prefab
+v_2/Assets/Resources/SoundEffectsManager.prefab
