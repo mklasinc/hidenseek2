@@ -9,6 +9,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 	bool game_status;
 	public GameObject timerprefab;
+	public GameObject clockprefab;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +42,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		GameObject timer = GameObject.FindGameObjectWithTag ("Timer");
 		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 		canvas.GetComponent<CanvasManager> ().GameEnd (winner);
+		KillCrunchTime (); // kill crunch time sound
 
 		PhotonView.Get(this).RPC("PlayEndGameSound", PhotonTargets.AllBuffered, winner);
 
@@ -81,6 +83,26 @@ public class GameLogicManager : Photon.MonoBehaviour {
 			game_status = true;
 		}
 //		game_status = b;
+	}
+
+	public void StartCrunchTime(){
+		PhotonView.Get(this).RPC("CrunchTimeInstantiate", PhotonTargets.MasterClient, 1);
+	}
+
+	public void KillCrunchTime(){
+		PhotonView.Get(this).RPC("CrunchTimeKill", PhotonTargets.MasterClient, 1);
+	}
+
+
+	[PunRPC] public void CrunchTimeInstantiate(int n){
+		PhotonNetwork.Instantiate (clockprefab.name, Vector3.zero, Quaternion.identity,0);
+	}
+
+	[PunRPC] public void CrunchTimeKill(int n){
+		GameObject clock = GameObject.FindGameObjectWithTag ("ClockTick");
+		if (clock != null) {
+			clock.GetComponent<ClockTick> ().KillClockTick ();
+		}
 	}
 
 	public bool IsGameOn(){
