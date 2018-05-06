@@ -12,6 +12,8 @@ public class TimerManager : Photon.MonoBehaviour {
 	GameObject canvas;
 	GameObject gameManager;
 
+	bool crunchTime = false;
+
 	//timer time left
 	float time_left;
 
@@ -60,12 +62,17 @@ public class TimerManager : Photon.MonoBehaviour {
 		};
 		canvas.GetComponent<CanvasManager>().UpdateTimerUI(time_string);
 		//game over logic
-		if (time_left == 0) {
+		if(time_left < 90 && !crunchTime){
+			Debug.Log ("play tick tock!");
+			gameManager.GetComponent<GameLogicManager> ().StartCrunchTime ();
+			crunchTime = true;
+		}else if (time_left == 0) {
 			Debug.Log ("game is over!");
 			gameManager.GetComponent<GameLogicManager> ().GameEnd ("hider");
 //			PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, false); // game is over
 //			canvas.GetComponent<CanvasManager>().EndGame("hider");
 //			canvasManager.UpdateTimerUI("Game Over");
+			Debug.Log ("stop tick tock!");
 		}
 
 	}
