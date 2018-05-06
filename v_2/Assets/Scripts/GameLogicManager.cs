@@ -41,13 +41,13 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, 0); // set game status to game over
 //		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, winner); // game is over
 		GameObject timer = GameObject.FindGameObjectWithTag ("Timer");
-		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
-		canvas.GetComponent<CanvasManager> ().GameEnd (winner);
+//		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
+//		canvas.GetComponent<CanvasManager> ().GameEnd (winner);
 		KillCrunchTime (); // kill crunch time sound
 
 		PhotonView.Get(this).RPC("PlayEndGameSound", PhotonTargets.AllBuffered, winner);
 
-		PhotonView.Get(this).RPC("Test2", PhotonTargets.AllBuffered, 2);
+		PhotonView.Get(this).RPC("Test2", PhotonTargets.AllBuffered, winner);
 
 	}
 
@@ -114,7 +114,10 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		return game_status;
 	}
 
-	[PunRPC] public void Test2(int b){
-		Debug.Log ("test 2 succeeded!");
+	[PunRPC] public void Test2(string win){
+		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
+		canvas.GetComponent<CanvasManager> ().GameEnd (win);
+
+
 	}
 }
