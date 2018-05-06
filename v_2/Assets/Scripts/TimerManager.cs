@@ -50,10 +50,10 @@ public class TimerManager : Photon.MonoBehaviour {
 		// do some time math
 		float time_elapsed = Mathf.Floor(Time.time - start_time); //
 		time_left = game_max_duration - time_elapsed;
-		float minutes_left = time_left % 60;
-		float seconds_left = time_left - minutes_left * 60;
-		string time_string = "";
-		if (seconds_left > 10) {
+		float minutes_left = Mathf.Floor(time_left / 60);
+		float seconds_left = time_left % 60;
+		string time_string;
+		if (seconds_left < 10) {
 			time_string = "0" + minutes_left.ToString () + ":0" + seconds_left.ToString ();
 		} else {
 			time_string = "0" + minutes_left.ToString() + ":" + seconds_left.ToString ();
