@@ -87,11 +87,8 @@ public class GameLogicManager : Photon.MonoBehaviour {
 	}
 
 	public void StartCrunchTime(){
-		if (!crunchTimeSoundIsOn) {
-			PhotonView.Get(this).RPC("CrunchTimeInstantiate", PhotonTargets.MasterClient, 1);
-			crunchTimeSoundIsOn = true;
-		}
-
+			GameObject.Instantiate (clockprefab, Vector3.zero, Quaternion.identity);
+//			PhotonView.Get(this).RPC("CrunchTimeInstantiate", PhotonTargets.MasterClient, 1);
 	}
 
 	public void KillCrunchTime(){
@@ -100,6 +97,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 
 	[PunRPC] public void CrunchTimeInstantiate(int n){
+
 		PhotonNetwork.Instantiate (clockprefab.name, Vector3.zero, Quaternion.identity,0);
 	}
 
