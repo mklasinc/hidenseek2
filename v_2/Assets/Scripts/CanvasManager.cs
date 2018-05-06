@@ -100,7 +100,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 
 	// END GAME UI
 
-	[PunRPC] public void ShowEndUI(string winner){
+	[PunRPC] public void ShowEndUIText(string winner){
 		// find the hider and the seeker
 		GameObject h = GameObject.Find("Hider(Clone)");
 		GameObject s = GameObject.Find("Seeker(Clone)");
@@ -114,15 +114,13 @@ public class CanvasManager : Photon.MonoBehaviour {
 			endUI.GetComponentInChildren<Text> ().text = "seeker won!";
 		} else if (winner == "hider") {
 			endUI.GetComponentInChildren<Text> ().text = "hider won!";
-		} else {
-			
 		}
 			
 	}
 
-	[PunRPC] public void GameEnd(string w){
+	public void GameEnd(string w){
 		Debug.Log ("someone is saying that the game is over!");
-		PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
+		PhotonView.Get(this).RPC("ShowEndUIText", PhotonTargets.AllBuffered, w);
 //		if (gameOn) {
 //			PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
 //		}
