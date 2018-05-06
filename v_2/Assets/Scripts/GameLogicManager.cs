@@ -47,6 +47,8 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 		PhotonView.Get(this).RPC("PlayEndGameSound", PhotonTargets.AllBuffered, winner);
 
+		PhotonView.Get(this).RPC("Test2", PhotonTargets.AllBuffered, 2);
+
 	}
 
 	[PunRPC] public void PlayEndGameSound(string winner){
@@ -110,5 +112,9 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 	public bool IsGameOn(){
 		return game_status;
+	}
+
+	[PunRPC] public void Test2(int b){
+		Debug.Log ("test 2 succeeded!");
 	}
 }
