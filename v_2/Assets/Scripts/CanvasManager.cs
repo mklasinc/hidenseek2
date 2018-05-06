@@ -90,6 +90,11 @@ public class CanvasManager : Photon.MonoBehaviour {
 //		StartGame ();
 	}
 
+	[PunRPC] public void Test(int a){
+		Debug.Log ("test was successful!");
+	}
+		
+
 	public void UpdateTimerUI(string m){
 		timerUI.GetComponentInChildren<Text> ().text = m;
 //		if (photonView.isMine) {
@@ -118,14 +123,11 @@ public class CanvasManager : Photon.MonoBehaviour {
 			
 	}
 
-	[PunRPC] public void Test(string a){
-		Debug.Log ("test was successful!");
-	}
 
 	public void GameEnd(string w){
 		Debug.Log ("someone is saying that the game is over!");
 //		PhotonView.Get(this).RPC("ShowEndUIText", PhotonTargets.AllBuffered, "seeker");
-		PhotonView.Get(this).RPC("Test", PhotonTargets.AllBuffered, "seeker");
+		PhotonView.Get(this).RPC("Test", PhotonTargets.AllBuffered, 1);
 //		if (gameOn) {
 //			PhotonView.Get(this).RPC("ShowEndUI", PhotonTargets.AllBuffered, w);
 //		}
