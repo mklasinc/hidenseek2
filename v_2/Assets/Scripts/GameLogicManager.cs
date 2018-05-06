@@ -10,6 +10,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 	bool game_status;
 	public GameObject timerprefab;
 	public GameObject clockprefab;
+	bool crunchTimeSoundIsOn = false;
 
 	// Use this for initialization
 	void Start () {
@@ -86,7 +87,11 @@ public class GameLogicManager : Photon.MonoBehaviour {
 	}
 
 	public void StartCrunchTime(){
-		PhotonView.Get(this).RPC("CrunchTimeInstantiate", PhotonTargets.MasterClient, 1);
+		if (!crunchTimeSoundIsOn) {
+			PhotonView.Get(this).RPC("CrunchTimeInstantiate", PhotonTargets.MasterClient, 1);
+			crunchTimeSoundIsOn = true;
+		}
+
 	}
 
 	public void KillCrunchTime(){
