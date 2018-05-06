@@ -51,7 +51,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 213898de1e6ad0d408de653e0228b411, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 66a8da13d39aa294ebc445c17cefec04, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.015
   m_Pitch: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b6338f3f137224f9738220086958d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  officeAudio: {fileID: 8300000, guid: 213898de1e6ad0d408de653e0228b411, type: 3}
+  officeAudio: {fileID: 8300000, guid: 66a8da13d39aa294ebc445c17cefec04, type: 3}
   sourceAudio: {fileID: 82123631137063776}
 --- !u!114 &114812263185098504
 MonoBehaviour:
@@ -157,7 +157,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114314483291691650}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
