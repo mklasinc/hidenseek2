@@ -116,7 +116,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 
 	[PunRPC] public void Test2(string win){
 		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
-		canvas.GetComponent<CanvasManager> ().GameEnd (win);
+		canvas.GetComponent<CanvasManager> ().ShowEndUIText (win);
 
 
 	}
