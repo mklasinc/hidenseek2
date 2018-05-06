@@ -61,4 +61,9 @@ MonoBehaviour:
   - GameStart
   - ResetTimer
   - PlayEndGameSound
+  - CrunchTimeInstantiate
+  - CrunchTimeKill
+  - ShowEndUIText
+  - Test
+  - Test2
   DisableAutoOpenWizard: 1
