@@ -26,8 +26,8 @@ public class RaycastManager : MonoBehaviour {
 
 		if (Physics.Raycast(transform.position, forward, out hit, raycastDistance, layers)) {
 			string tag = hit.collider.gameObject.tag;	
-//			Debug.Log("weve got a hit! object that was hit: " + hit.collider.gameObject.name);
-			Debug.Log("the collision object has a tag: " + hit.collider.gameObject.tag);
+			Debug.Log("weve got a hit! object that was hit: " + hit.collider.gameObject.name);
+//			Debug.Log("the collision object has a tag: " + hit.collider.gameObject.tag);
 
 			// game over
 //			if (tag == "Player" && hit.distance < end_game_raycast_distance) {
