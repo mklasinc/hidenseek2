@@ -46,9 +46,9 @@ public class CanvasManager : Photon.MonoBehaviour {
 		Debug.Log (h);
 		string m = "empty string";
 		if (h != null) {
-			m = "you are a hider!";
+			m = "Wohooo!\nYour dad brought you with him to work but the kids' room in the office was too boring for you. You escaped, but you know the fun is over if your dad catches you, so hide well!";
 		} else if (s != null) {
-			m = "Oh no! \nYou brought your mischevious daughter to work, but she escaped the kids' room during lunch break. Make sure to seek her out before your boss gets mad at you";
+			m = "Oh no! \nYou brought your mischevious daughter to work, but she escaped the kids' room during lunch break. Make sure to seek her out before your boss gets mad at you!";
 		};
 		startUI.GetComponentInChildren<Text>().text = m;
 
