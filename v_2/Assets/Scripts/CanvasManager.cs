@@ -46,7 +46,7 @@ public class CanvasManager : Photon.MonoBehaviour {
 		Debug.Log (h);
 		string m = "empty string";
 		if (h != null) {
-			m = "Wohooo!\nYour dad brought you with him to work but the kids' room in the office was too boring for you. You escaped, but you know the fun is over if your dad catches you, so hide well!";
+			m = "Wohooo!\nYour parents brought you with them to work but the kids' room in the office was too boring for you. You escaped, but you know the fun is over if your parent catches you, so hide well!";
 		} else if (s != null) {
 			m = "Oh no! \nYou brought your mischevious daughter to work, but she escaped the kids' room during lunch break. Make sure to seek her out before your boss gets mad at you!";
 		};
@@ -116,9 +116,9 @@ public class CanvasManager : Photon.MonoBehaviour {
 
 		// ui text dipsplay logic
 		if (winner == "seeker") {
-			endUI.GetComponentInChildren<Text> ().text = "seeker won!";
+			endUI.GetComponentInChildren<Text> ().text = "The parent won and avoided getting fired!";
 		} else if (winner == "hider") {
-			endUI.GetComponentInChildren<Text> ().text = "hider won!";
+			endUI.GetComponentInChildren<Text> ().text = "Daughter wins! This has been a fun day at the office. ";
 		}
 			
 	}

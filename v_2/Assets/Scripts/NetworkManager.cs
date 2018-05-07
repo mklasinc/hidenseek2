@@ -42,6 +42,7 @@ public class NetworkManager : MonoBehaviour {
 
 	//sfx prefabs
 	public GameObject printer;
+	public GameObject cabinets;
 
 
 	//Array to hold the spawn points in the scene and an array to see which spawn points have been taken
