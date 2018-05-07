@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4354943561444190}
   - component: {fileID: 114080927102183428}
   - component: {fileID: 114216958280889036}
-  - component: {fileID: 114977502988457848}
   - component: {fileID: 120204054577067012}
   - component: {fileID: 114876769766756042}
   m_Layer: 0
@@ -1708,7 +1707,7 @@ MonoBehaviour:
   drawWireframeWhenSelectedOnly: 0
   drawInGame: 0
   size: 2
-  color: {r: 0, g: 1, b: 1, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 0}
   vertices:
   - {x: 1.5, y: 0.01, z: -1.125}
   - {x: -1.5, y: 0.01, z: -1.125}
@@ -1959,7 +1958,7 @@ MonoBehaviour:
   PointCount: 25
   PointSpacing: 0.5
   GraphicThickness: 0.05
-  GraphicMaterial: {fileID: 2100000, guid: 21a645b07758b4b478bff4374fdb9a43, type: 2}
+  GraphicMaterial: {fileID: 2100000, guid: cce0fac2807cd114f94aed35f1081b7e, type: 3}
   SelectionPadPrefab: {fileID: 1207235191327700, guid: fd0bb8125c368e047835376edd357a42,
     type: 2}
   InvalidPadPrefab: {fileID: 1415373617439018, guid: b930d0faf07413d4fac0f85a19431243,
@@ -2017,17 +2016,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
---- !u!114 &114977502988457848
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019662343163722}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!120 &120204054577067012
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -2042,7 +2030,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: dbf8d43235252e54bb9374d47b8853f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2130,7 +2118,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: dbf8d43235252e54bb9374d47b8853f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
