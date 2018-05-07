@@ -82,3 +82,5 @@ MonoBehaviour:
     type: 2}
   clockprefab: {fileID: 1877675989389676, guid: 04a8c37f47eaee546bc5fc84ab99c728,
     type: 2}
+  backgroundsoundprefab: {fileID: 1686156726483436, guid: e883dea98eebc7a44af653b10058f752,
+    type: 2}

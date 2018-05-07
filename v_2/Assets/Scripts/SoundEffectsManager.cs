@@ -9,6 +9,7 @@ public class SoundEffectsManager : Photon.MonoBehaviour {
 	public GameObject winnerSound;
 	public GameObject loserSound;
 	public GameObject spawnP;
+	public GameObject startgameSound;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,9 @@ public class SoundEffectsManager : Photon.MonoBehaviour {
 		
 		} else if (sEffect == "loser") {
 			GameObject.Instantiate (loserSound, Vector3.zero, Quaternion.identity);
-		} 
+		} else if (sEffect == "game_start") {
+			PhotonNetwork.Instantiate (startgameSound.name, Vector3.zero, Quaternion.identity,0);
+		}
 
 	}
 }
