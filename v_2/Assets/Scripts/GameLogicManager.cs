@@ -10,6 +10,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 	bool game_status;
 	public GameObject timerprefab;
 	public GameObject clockprefab;
+	public GameObject backgroundsoundprefab;
 	bool crunchTimeSoundIsOn = false;
 
 	// Use this for initialization
@@ -30,8 +31,12 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		//start timer
 		Debug.Log("will try to instantiate a timer object!");
 		PhotonNetwork.Instantiate (timerprefab.name, Vector3.zero, Quaternion.identity,0);
+		PhotonNetwork.Instantiate (backgroundsoundprefab.name, Vector3.zero, Quaternion.identity,0);
 		//update game status
 		PhotonView.Get(this).RPC("SetGameStatus", PhotonTargets.AllBuffered, 1); // set game status to game over
+
+		GameObject sEffectManager = GameObject.FindGameObjectWithTag("SoundEffects");
+		sEffectManager.GetComponent<SoundEffectsManager> ().InstantiateFootsteps ("game_start", Vector3.zero);
 //		SetGameStatus(true);
 	}
 		
@@ -119,6 +124,9 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 		canvas.GetComponent<CanvasManager> ().ShowEndUIText (win);
 
-
+		GameObject music = GameObject.FindGameObjectWithTag ("SearchMusic");
+		if (music != null) {
+			music.GetComponent<SearchMusic> ().KillSearchSound ();
+		}
 	}
 }

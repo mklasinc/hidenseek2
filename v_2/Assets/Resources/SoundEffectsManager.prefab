@@ -58,6 +58,8 @@ MonoBehaviour:
     type: 2}
   loserSound: {fileID: 1200512104771168, guid: 124c5654a36c2fd4f88ef96884e5590d, type: 2}
   spawnP: {fileID: 1243993174257658, guid: 7697ce9795e4b4ba189fe347dc083f36, type: 2}
+  startgameSound: {fileID: 1123985670755234, guid: 689fd85e10574884db8d4ad212e64950,
+    type: 2}
 --- !u!114 &114883974322018620
 MonoBehaviour:
   m_ObjectHideFlags: 1
