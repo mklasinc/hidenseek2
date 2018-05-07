@@ -78,4 +78,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f6a8a3da3484c84a64641a6a34b6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game_max_duration: 100
+  game_max_duration: 120

@@ -43,7 +43,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 		GameObject timer = GameObject.FindGameObjectWithTag ("Timer");
 //		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 //		canvas.GetComponent<CanvasManager> ().GameEnd (winner);
-		KillCrunchTime (); // kill crunch time sound
+//		KillCrunchTime (); // kill crunch time sound
 
 		PhotonView.Get(this).RPC("PlayEndGameSound", PhotonTargets.AllBuffered, winner);
 
@@ -115,6 +115,7 @@ public class GameLogicManager : Photon.MonoBehaviour {
 	}
 
 	[PunRPC] public void Test2(string win){
+		CrunchTimeKill (1);
 		GameObject canvas = GameObject.FindGameObjectWithTag ("Canvas");
 		canvas.GetComponent<CanvasManager> ().ShowEndUIText (win);
 

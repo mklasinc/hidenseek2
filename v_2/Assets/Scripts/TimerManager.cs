@@ -62,7 +62,7 @@ public class TimerManager : Photon.MonoBehaviour {
 		};
 		canvas.GetComponent<CanvasManager>().UpdateTimerUI(time_string);
 		//game over logic
-		if(time_left < 90 && !crunchTime){
+		if(time_left < 30 && !crunchTime){
 			Debug.Log ("play tick tock!");
 			gameManager.GetComponent<GameLogicManager> ().StartCrunchTime ();
 			crunchTime = true;
